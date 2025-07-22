@@ -1,0 +1,787 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<style type="text/css">
+table, th, td {
+	border: 0px solid black;
+	align: left;
+	text-align: left;
+}
+</style>
+
+<html>
+
+<head>
+<!-- meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<title>MV-MMS</title>
+<%@ include file="sections/headEdit.jsp"%>
+
+<style type="text/css">
+.form-control {
+	display: inline-block;
+	width: -webkit-fill-available;
+	height: 34px;
+	font-size: 12px;
+	color: #0f1893;
+	border-color: #095f9f;
+	background-color: #fff;
+	font-weight: 800;
+	border-radius: 4px;
+}
+</style>
+
+<script type="text/javascript">
+	var checkBoxSelected = [];
+
+	function addCheckedToArray(id) {
+		var checkBox = document.getElementById("cb_" + id);
+		if (checkBox.checked == true) {
+			checkBoxSelected.push(id);
+		} else {
+			checkBoxSelected = arrayRemove(checkBoxSelected, id);
+		}
+		alert(checkBoxSelected);
+	}
+
+	function arrayRemove(arr, value) {
+
+		return arr.filter(function(ele) {
+			return ele != value;
+		});
+
+	}
+
+	function goToEstimate() {
+
+		var str = "";
+		for (var i = 0; i < checkBoxSelected.length; i++) {
+			if (i != 0) {
+				str = str + "," + checkBoxSelected[i];
+			} else {
+				str = checkBoxSelected[0];
+			}
+		}
+		alert(str);
+
+		$.ajax({
+			type : "GET",
+			url : "/MMS/goToEstimate/" + str,
+			success : function(response) {
+				alert(response);
+				console.log(response);
+			}
+		});
+	}
+
+	function ConfirmActivate(comid) {
+
+		//alert("hiiii");
+		$.ajax({
+
+			type : 'GET',
+			url : "/MMS/viewProvinceNew/" + comid,
+			data : {},
+			contentType : "application/json; charset=utf-8",
+			success : function(response) {
+				alert(response);
+
+			}
+		});
+	}
+
+	function showProvinces() {
+
+		$
+				.ajax({
+					type : 'GET',
+					url : '/MMS/findAllProvinces/',
+					data : {},
+					contentType : "application/json; charset=utf-8",
+					success : function(response) {
+						$("#tblProvinces > tbody:last").children().remove();
+
+						//Insert item from the response
+						for (var i = 0; i < response.length; i++) {
+							var item = response[i];
+							var comid = item.compId;
+
+							tr = $('<tr/>');
+							tr.append("<td> " + item.compNm + "</td>");
+							tr
+									.append("<td>"
+											+ "<button type='button' class='btn btn-info' onClick=ConfirmActivate('"
+											+ comid + "')>Go</button>"
+											+ "</td>");
+
+							$('#tblProvinces').append(tr);
+						}
+
+						$('#tblProvinces').dataTable({
+							'info' : false,
+							'pageLength' : 10,
+							retrieve : true
+						});
+					}
+				});
+	}
+
+	function findArea() {
+		//var categoryId = $(this).val();
+		//alert("hiii");
+		var strUser = province.options[province.selectedIndex].value;
+		//alert("hiiittt : "+strUser);
+		//findAllAreaByProvinceNew
+
+		$
+				.ajax({
+					type : 'GET',
+					url : "/MMS/findAllAreaByProvinceNew/" + strUser,
+					data : {},
+					contentType : "application/json; charset=utf-8",
+					success : function(data) {
+						var slctSubcat = $('#area'), option = "<option value='NONE'>ALL</option>";
+						slctSubcat.empty();
+						for (var i = 0; i < data.length; i++) {
+							option = option
+									+ "<option value='" + data[ i ].deptId + "'>"
+									+ data[i].deptNm + "</option>";
+						}
+						slctSubcat.append(option);
+
+						//alert("response.towerNo" + data);	
+					}
+				});
+	}
+
+	function getLine() {
+		//var categoryId = $(this).val();
+		//alert("hiii");
+		var strUser = area.options[area.selectedIndex].value;
+		//alert("hiiittt : "+strUser);
+		//findAllAreaByProvinceNew
+
+		$
+				.ajax({
+					type : 'GET',
+					url : "/MMS/findLineByArea/" + strUser + "/",
+					data : {},
+					contentType : "application/json; charset=utf-8",
+					success : function(data) {
+						var slctSubcat = $('#line'), option = "<option value='NONE'>ALL</option>";
+						slctSubcat.empty();
+						for (var i = 0; i < data.length; i++) {
+							option = option
+									+ "<option value='" + data[ i ].code + "'>"
+									+ data[i].lineName + "</option>";
+						}
+						slctSubcat.append(option);
+
+						//alert("response.towerNo" + data);	
+					}
+				});
+	}
+
+	function ConfirmActivate(comid) {
+
+		alert("hiiii");
+		$.ajax({
+
+			type : 'GET',
+			url : "/MMS/viewProvinceNew/" + comid,
+			data : {},
+			contentType : "application/json; charset=utf-8",
+			success : function(response) {
+				alert(response);
+
+			}
+		});
+
+	}
+
+	function showProvinces() {
+
+		$
+				.ajax({
+					type : 'GET',
+					url : '/MMS/findAllProvinces/',
+					data : {},
+					contentType : "application/json; charset=utf-8",
+					success : function(response) {
+						$("#tblProvinces > tbody:last").children().remove();
+
+						//Insert item from the response
+						for (var i = 0; i < response.length; i++) {
+							var item = response[i];
+							var comid = item.compId;
+
+							tr = $('<tr/>');
+							tr.append("<td> " + item.compNm + "</td>");
+							tr
+									.append("<td>"
+											+ "<button type='button' class='btn btn-info' onClick=ConfirmActivate('"
+											+ comid + "')>Go</button>"
+											+ "</td>");
+
+							$('#tblProvinces').append(tr);
+						}
+
+						$('#tblProvinces').dataTable({
+							'info' : false,
+							'pageLength' : 10,
+							retrieve : true
+						});
+					}
+				});
+	}
+
+	function findArea() {
+		//var categoryId = $(this).val();
+		//alert("hiii");
+		var strUser = province.options[province.selectedIndex].value;
+		//alert("hiiittt : "+strUser);
+		//findAllAreaByProvinceNew
+
+		$
+				.ajax({
+					type : 'GET',
+					url : "/MMS/findAllAreaByProvinceNew/" + strUser,
+					data : {},
+					contentType : "application/json; charset=utf-8",
+					success : function(data) {
+						var slctSubcat = $('#area'), option = "<option value='NONE'>ALL</option>";
+						slctSubcat.empty();
+						for (var i = 0; i < data.length; i++) {
+							option = option
+									+ "<option value='"+data[i].deptId + "'>"
+									+ data[i].deptNm + "</option>";
+						}
+						slctSubcat.append(option);
+
+						//alert("response.towerNo" + data);	
+					}
+				});
+
+	}
+
+	function getLine() {
+		//var categoryId = $(this).val();
+		//alert("hiii");
+		var strUser = area.options[area.selectedIndex].value;
+		//alert("hiiittt : "+strUser);
+		//findAllAreaByProvinceNew
+
+		$
+				.ajax({
+					type : 'GET',
+					url : "/MMS/findLineByArea/" + strUser + "/",
+					data : {},
+					contentType : "application/json; charset=utf-8",
+					success : function(data) {
+						var slctSubcat = $('#line'), option = "<option value='NONE'>ALL</option>";
+						slctSubcat.empty();
+						for (var i = 0; i < data.length; i++) {
+							option = option
+									+ "<option value='"+data[i].code + "'>"
+									+ data[i].lineName + "</option>";
+						}
+						slctSubcat.append(option);
+
+						//alert("response.towerNo" + data);	
+					}
+				});
+
+	}
+	
+	function generateEstimate(){
+		var areaName = area.options[area.selectedIndex].text;
+		var cycleName = cycle.options[cycle.selectedIndex].value;
+		var userIdName = userId.options[userId.selectedIndex].value;
+		var appName = appId.options[appId.selectedIndex].value;
+		
+		
+		if (areaName === "")
+		{
+			alert("Area may not be empty");
+			event.preventDefault();
+			return false;
+		}else if (userIdName === ""){
+			alert("ES may not be empty");
+			event.preventDefault();
+			return false;
+		}else if (appName === ""){
+			alert("Applicant may not be empty");
+			event.preventDefault();
+			return false;
+		}
+		else if (cycleName === ""){
+			alert("Cycle may not be empty");
+			event.preventDefault();
+			return false;
+		}else{
+			
+		}
+		
+
+		
+		//alert(areaName + cycleName+userIdName+appName);
+		$
+		.ajax({
+			type : 'GET',
+			url : "/MMS/goToViewInsEstimateSCIVIL?area=" + areaName + "&cycle="+cycleName +"&es="+userIdName+"&id="+appName,
+			data : {},
+			contentType : "application/json",
+			success : function(data) {
+				
+				alert("Estimate is successfully created "+ data);	
+			}
+		});
+
+		
+	}
+</script>
+</head>
+
+<body>
+	<div id="theme-wrapper">
+
+		<%@ include file="sections/header.jsp"%>
+
+		<div id="page-wrapper" class="container">
+			<div class="row">
+
+				<%@ include file="sections/userLevels.jsp"%>
+
+				<div id="content-wrapper">
+
+
+					<div class="row">
+						<div class="col-lg-12">
+
+							<div class="col-lg-9">
+								<ol class="breadcrumb">
+									<li><a href="#">Home</a></li>
+									<li class="active"><span>COLD LINE CIVIL ESTIMATE</span></li>
+								</ol>
+							</div>
+
+							<%@ include file="sections/userDetails.jsp"%>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+								<!-- <h2 class="pull-left">
+									<strong>COLD LINE ESTIMATE</strong>
+								</h2> -->
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="table-responsive">
+										<table class="table table-responsive" id="tblProvinces">
+
+											<thead>
+
+											</thead>
+											<tbody>
+												<form:form method="post" action="saveCIVIL"
+													modelAttribute="model">
+													
+													<c:if test="${not empty model.mode}">
+										<tr>
+										<td colspan="2" class="msgSuccess" align="center">
+										
+									<div class="msgSuccess">
+										<c:out value="${model.mode}"></c:out>
+									</div>
+								
+						</tr>
+					</c:if>
+
+
+													<table class="table table-striped table-bordered table-sm " id="tblProvinces">
+
+														<tr>
+															<td width="30%" style="text-align: left">Province</td>
+															<td width="70%" style="text-align: left"><form:select
+																	id="province" path="glcompmobj.compId"
+																	onchange="findArea()"
+																	style="width:50%; background-color: #FFFFF; border-radius: 5px;">
+																	<form:option value="" label="ALL" />
+																	<form:options items="${model.provinceList}" />
+																</form:select></td>
+														</tr>
+
+														<tr>
+															<td width="30%" style="text-align: left">Area</td>
+															<td width="70%" style="text-align: left"><form:select
+																	id="area" path="gldeptobj.deptId" onchange="getLine()"
+																	style="width:50%; background-color: #FFFFF; border-radius: 5px;">
+																	<form:option value="" label="ALL" />
+																	<form:options items="${model.areaList}" />
+																</form:select></td>
+														</tr>
+
+														<tr>
+															<td width="30%" style="text-align: left">Electrical
+																	Superintendent</td>
+															<td width="70%" style="text-align: left"><form:select
+																	id="userId" path="sauserm.userId" onchange="" style="width:50%; background-color: #FFFFF; border-radius: 5px;">
+																	
+																	<form:option value="" label="ALL" />
+																	<form:options items="${model.saList}" />
+																</form:select></td>
+
+														</tr>
+														<tr>
+															<td width="30%" style="text-align: left">Applicant</td>
+															<td width="70%" style="text-align: left"><form:select
+																	id="appId" path="applicant.idNo" onchange="" style="width:50%; background-color: #FFFFF; border-radius: 5px;">
+																	<form:option value="" label="ALL" />
+																	<form:options items="${model.appList}" />
+																</form:select></td>
+
+														</tr>
+														
+														<tr>
+														
+														
+														<td width="30%" style="text-align: left">Cycle</td>
+															<td width="70%" style="text-align: left"><form:select
+																	id="cycle" path="cycle" onchange="" style="width:50%; background-color: #FFFFF; border-radius: 5px;">
+																	<form:option value="" label="ALL" />
+																	<form:options items="${model.cycleList}" />
+
+																	
+																</form:select></td>
+														</tr>
+														
+														
+														
+														
+														
+														
+<%-- <tr>
+															<td width="30%" style="text-align: left"><form:label
+																	path="">Cycle</form:label></td>
+															<td width="70%" style="text-align: left"><form:select
+																	id="method" path="cycle" onchange="" style="width:50%; background-color: #8187ff; border-radius: 5px;">
+
+																	<form:option value="" label="ALL " />
+																	<form:option value="201901" label="201901" />
+																	<form:option value="201801" label="201801" />
+																
+																</form:select></td>
+														</tr> --%>
+
+
+
+														<!-- <tr>
+															<td style="text-align: left"><a
+																href="../MMS/GenerateReportTM?area=431&line=49"> <input
+																	class="btn btn-success" type="submit"
+																	name="actionButton" value="GO"></input></a></td>
+														</tr> -->
+
+													</table>
+
+
+
+
+
+
+
+													<c:if test="${canGO !='1'}">
+														<!-- <br>
+														<h2 class="pull-left">
+															<strong>Select Lines To Estimate</strong>
+														</h2>
+														<br>
+														<br>
+														 --><table class="table table-striped table-bordered table-sm " id="tblAdmin">
+															<!-- <thead>
+															<tr>
+															<td>Select Lines To Estimate</td>
+															</tr>
+															
+																<tr>
+																	<th class="text-center">Select</th>
+																	<th class="text-center">Line Code</th>
+																	<th class="text-center">Line Name</th>
+																	<th class="text-center">Line Length</th>
+																	<th class="text-center">No Of Poles</th>
+																	<th class="text-center">No Of Towers</th>
+																</tr>
+															</thead>
+															 --><tbody>
+
+																<%-- <tr>
+																	<td><form:label path="">line</form:label></td>
+
+																	<td><form:checkboxes items="${model.listOfLines}"
+																			path="selectedLines" /></td>
+																	<td></td>
+																</tr> --%>
+
+
+																<c:forEach var="Line" items="${model.lineListEdit}">
+																	<tr>
+																		<td><form:checkbox id="cb_${Line.id}" onclick=""
+																				path="selectedLines" value="${Line.id}" /></td>
+																		<td><input type="text" id="id_${Line.code}"
+																			value="${Line.code}" class="form-control" disabled></td>
+																		<td><input type="text" id="na_${Line.id}"
+																			value="${Line.lineName}" class="form-control"
+																			disabled></td>
+																		<td><input type="text" id="ll_${Line.id}"
+																			value="${Line.length}" class="form-control" disabled></td>
+																		<td><input type="text" id="np_${Line.id}"
+																			value="${Line.noofpoles}" class="form-control"
+																			disabled></td>
+																		<td><input type="text" id="nt_${Line.id}"
+																			value="${Line.nooftowers}" class="form-control"
+																			disabled></td>
+																	</tr>
+																</c:forEach>
+															</tbody>
+														</table>
+													</c:if>
+
+
+
+
+
+													<c:if test="${canGO =='3'}">
+														<!-- <br>
+														<h2 class="pull-left">
+															<strong>COLD LINE ESTIMATE</strong>
+														</h2>
+														<br>
+														<br>
+														 --><table class="table table-striped table-bordered table-sm " id="tblAdmin">
+															<tbody>
+															<tr>
+															<td>COLD LINE ESTIMATE</td>
+															</tr>
+																<tr>
+
+																	<td width="40%" style="text-align: left">Total
+																		Line Length</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.totalLineLength"
+																			value="${inspection.totalLineLength}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																<tr>
+																	<td width="40%" style="text-align: left">Total
+																		Number of Towers</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.totalNoTowers"
+																			value="${inspection.totalNoTowers}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																<%-- <tr>
+																	<td width="40%" style="text-align: left">Number of
+																		days for the Inspection (C)</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.noDaysForTheIns"
+																			value="${inspection.noDaysForTheIns}" readonly="true"></form:input>
+
+																	</td>
+																</tr> --%>
+																<tr>
+																	<td width="40%" style="text-align: left">Labour
+																		Hours for the Estimate (D 1)</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.labourHoursForEst"
+																			value="${inspection.labourHoursForEst}"
+																			readonly="true"></form:input></td>
+																</tr>
+																<tr>
+																	<td width="40%" style="text-align: left">Labour
+																		value for the Estimate (D) LKR</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.labourValueForEst"
+																			value="${inspection.labourValueForEst}"
+																			readonly="true"></form:input></td>
+																</tr>
+																<tr>
+																	<td width="40%" style="text-align: left">Subsistance
+																		(E) LKR</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.subsistance"
+																			value="${inspection.subsistance}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																<%-- <tr>
+																	<td width="40%" style="text-align: left">Hot line
+																		Allowance (F) LKR</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.hotLineAllowances"
+																			value="${inspection.hotLineAllowances}"
+																			readonly="true"></form:input></td>
+																</tr>
+																 --%><tr>
+																	<td width="40%" style="text-align: left">Temporarily
+																		site cost LKR </td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.temporarySiteCost"
+																			value="${inspection.temporarySiteCost}"
+																			readonly="true"></form:input></td>
+																</tr>
+
+																<tr>
+																	<td width="40%" style="text-align: left">Transport
+																		Cost</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.transport"
+																			value="${inspection.transport}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																	<tr>
+																	<td width="40%" style="text-align: left">Material
+																		Cost -C0138</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.matC0138"
+																			value="${inspection.matC0138}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																<tr>
+																	<td width="40%" style="text-align: left">Material
+																		Cost -C0190</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.matC0190"
+																			value="${inspection.matC0190}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																<tr>
+																	<td width="40%" style="text-align: left">Material
+																		Cost -C0180</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.matC0180"
+																			value="${inspection.matC0180}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																<tr>
+																	<td width="40%" style="text-align: left">Material
+																		Cost -C0143</td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.matC0143"
+																			value="${inspection.matC0143}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+																
+																
+																
+																
+																<tr>
+																	<td width="40%" style="text-align: left">Total </td>
+																	<td width="60%" style="text-align: left"><form:input
+																			path="inspection.tatalCost"
+																			value="${inspection.tatalCost}" readonly="true"></form:input>
+
+																	</td>
+																</tr>
+
+
+																<!-- <tr>
+															<td style="text-align: left"><input
+																class="btn btn-success" type="submit"
+																name="actionButton" value="Save"></input></td>
+														</tr> -->
+
+															</tbody>
+														</table>
+														
+																													
+														
+														
+													</c:if>
+
+													<c:if test="${canGO =='1'}">
+														<tr>
+															<td style="text-align: left"><input
+										class="btn btn-success" type="submit" 
+																	name="actionButton" value="Generate"></input></td>
+														</tr>
+													</c:if>
+													<%-- <c:if test="${canGO =='2'}">
+														<tr>
+															<td style="text-align: left"><a
+																href="../MMS/GenerateReportTM?area=431&line=49"> <input
+																	class="btn btn-success" type="submit"
+																	name="actionButton" value="Go To Estimate"></input></a></td>
+														</tr>
+													</c:if>
+													 <c:if test="${canGO =='3'}">
+													 <table>
+														<tr>
+															<td style="text-align: left"><a
+																href="../MMS/GenerateReportTM?area=431&line=49"> <input
+																	class="btn btn-success" type="submit"
+																	name="actionButton" value="Save"></input></a></td>
+														</tr>
+														
+														</table>
+														</c:if>
+
+ --%>
+												</form:form>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+					<!-- <div class="row">
+                            <div class="col-lg-12">
+
+                                 <header class="main-box-header clearfix">
+                                    <h2 class="pull-left">List of Support</h2>
+                                </header>
+
+                                
+                            </div>
+                        </div> -->
+
+
+					<%@ include file="sections/footer.jsp"%>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%@ include file="sections/global_scripts.jsp"%>
+
+
+</body>
+
+</html>

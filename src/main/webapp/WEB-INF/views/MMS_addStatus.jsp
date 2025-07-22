@@ -1,0 +1,253 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<%@ include file="sections/head.jsp" %>
+	<script type="text/javascript">
+	function getStatus()
+	{			
+			 $.ajax
+             ({
+                     type: 'GET',
+                     url: '/MMS/findActiveStatusTypes/',
+                     data: {},
+                     contentType: "application/json; charset=utf-8",
+                     success: function(response) 
+                     {
+                    	 $('#cmbStatusType').empty();
+                         //Append "None" item
+                         $('#cmbStatusType').append($('<option>').text("<< Select Status Type >>").attr('value', ""));
+
+                         //Insert item from the response
+                         for (var i = 0; i < response.length; i++) {
+                             var item = response[i];
+                             $('#cmbStatusType').append($('<option>').text(item.type).attr('value', item.type));
+                         }
+                     }
+              });		
+	}
+	
+	function showStatus()
+	{			
+			 $.ajax
+             ({
+                     type: 'GET',
+                     url: '/MMS/findAllStatus/',
+                     data: {},
+                     contentType: "application/json; charset=utf-8",
+                     success: function(response) 
+                     {
+                    	 $("#tblStatus > tbody:last").children().remove();
+
+                    	 //Insert item from the response
+                         for (var i = 0; i < response.length; i++) {
+                             var item = response[i];
+                             
+                             tr = $('<tr/>');
+                                tr.append("<td>" + item.id + "</td>"); 
+                                tr.append("<td>" + item.type + "</td>");
+                                tr.append("<td>" + item.name + "</td>");
+                               
+                                if(item.status==0){
+                                    tr.append("<td><span class='label label-warning'>Pending</span></td>"); 
+                                } else if(item.status==1){ 
+                                    tr.append("<td><span class='label label-success'>Active</span></td>"); 
+                                }
+                                else if(item.status==2){ 
+                                    tr.append("<td><span class='label label-default'>In bulk</span></td>"); 
+                                }
+                                else if(item.status==3){ 
+                                    tr.append("<td><span class='label label-danger'>Rejected</span></td>"); 
+                                }
+                                else if(item.status==4){ 
+                                	tr.append("<td><span class='label label-info'>Inactive</span></td>");  
+                                }
+
+                                $('#tblStatus').append(tr);
+                         }
+                         
+                         $('#tblStatus').dataTable({
+                                'info': false,
+                                'pageLength': 10,
+                                retrieve: true
+                            });
+                     }
+              });                   		
+	}
+	
+	function validateForm() {
+		clearErrorMessages();
+	    try {
+	    	 if (validateEmpty("txtId") == false) {
+                 throw 1000;
+             }
+	    	 
+	    	 if (validateList("cmbStatusType") == false) {
+                 throw 1001;
+             }
+	    	 
+	    	 if (validateEmpty("txtStatusName") == false) {
+                 throw 1002;
+             }
+	    	    	 
+	    	 if (validateEmpty("txtStatus") == false) {
+                 throw 1003;
+             }
+	    	 return true;
+			
+		} catch (e) {
+			if (e == 1000) {
+                document.getElementById("spnId").innerHTML = "Status Id is Required !";
+                ScrollToElement("spnId");
+            }
+			
+			if (e == 1001) {
+                document.getElementById("spncmbStatus").innerHTML = "Status Type is Required !";
+                ScrollToElement("spncmbStatus");
+            }
+			
+			if (e == 1002) {
+                document.getElementById("spnStatusName").innerHTML = "Status Name is Required !";
+                ScrollToElement("spnStatusName");
+            }
+			
+			if (e == 1003) {
+                document.getElementById("spnStatus").innerHTML = "Status of Status is Required !";
+                ScrollToElement("spnStatus");
+            }
+			return false;
+		}
+	}
+	
+	 function clearErrorMessages() {
+         document.getElementById('spnId').innerHTML = "";
+         document.getElementById('spncmbStatus').innerHTML = "";
+         document.getElementById('spnStatusName').innerHTML = "";
+         document.getElementById('spnStatus').innerHTML = "";
+     }
+	 
+	</script>
+</head>
+<body onload="showStatus();getStatus();">
+<div id="theme-wrapper">
+		<%@ include file="sections/header.jsp" %>
+		
+		<div id="page-wrapper" class="container">
+			<div class="row">
+				<%@ include file="sections/userLevels.jsp" %>
+				
+				<div id="content-wrapper">
+				
+				<div class="row">
+					<div class="col-lg-12">		                                    
+	                        <div class="col-lg-9">
+	                            <ol class="breadcrumb">
+	                                <li><a href="#">Home</a></li>
+	                                <li class="active"><span>Status</span></li>
+	                            </ol>
+	
+	                            <h1>Add Status</h1>
+	                        </div>
+				                                    
+							<%@ include file="sections/userDetails.jsp" %> 
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="main-box">
+
+								<div class="main-box-body clearfix">
+									<form:form role="form" method="post" action="MMSAddStatus" modelAttribute="SaveStatus" onsubmit="return validateForm()">
+										
+										<div class="form-group">
+											<label for="txtId">ID :
+											<form:input path="id" type="text" class="form-control" id="txtId" placeholder="Enter ID"/>
+											<span id="spnId" class="label label-danger"></span></label>
+										</div>
+										
+										<div class="form-group">
+											<label for="cmbStatusType">Type :
+											<form:select path="type" class="form-control" id="cmbStatusType" name="cmbStatusType">
+										
+											</form:select>
+											<span id="spncmbStatus" class="label label-danger"></span></label>
+										</div>
+										
+										<div class="form-group">
+											<label for="txtStatusName">Name :
+											<form:input path="name" type="text" class="form-control" id="txtStatusName" placeholder="Enter Status Name"/>
+											<span id="spnStatusName" class="label label-danger"></span></label>
+										</div>
+
+										<div class="form-group">
+											<label for="txtStatus">Status :
+											<form:select path="status" class="form-control" id="txtStatus" placeholder="Enter Status">
+												<form:option value="" selected="selected"> << SELECT >> </form:option>
+												<form:option value="0">Send for Approval</form:option>
+												<form:option value="2">Keep in Bulk</form:option>
+											</form:select>										
+											<span id="spnStatus" class="label label-danger"></span></label>
+										</div>
+										
+										<div class="form-group">
+											<div class="pull-left">
+												<input type="submit" Value="Add" class="btn btn-success" />
+												<button type="button" class="btn btn-warning" onclick="window.location.href='editStatusType'">Edit</button>
+											</div>
+										</div>
+										
+									</form:form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					
+					<div class="row">
+								<div class="col-lg-12">
+									<div class="main-box clearfix">
+										<header class="main-box-header clearfix">
+											<h2 class="pull-left">Statuses List</h2>
+										</header>
+										
+										<div class="main-box-body clearfix">
+											<div class="table-responsive">
+                            					<table class="table table-responsive" id="tblStatus">
+													<thead>
+														<tr>
+                                                                                                                         
+															<th class="text-center">ID</th>
+															<th class="text-center">Type</th>
+															<th class="text-center">Status Name</th>
+															<th class="text-center">Status</th>
+															<th class="text-center" data-orderable="false"></th>
+															
+														</tr>
+													</thead>
+													<tbody>
+														
+													</tbody>
+												</table>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+
+					<%@ include file="sections/footer.jsp" %>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		<%@ include file="sections/global_scripts.jsp" %>
+		
+	</body>
+</html>

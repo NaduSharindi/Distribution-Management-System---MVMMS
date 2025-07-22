@@ -1,0 +1,68 @@
+select distinct reference_type from piv_detail order by reference_type
+
+select * from sauserm where RPT_USER like '260.20%'
+
+select PIV_NO, status from piv_detail where sys_type = 'PIV'
+
+update piv_detail set status = 'S' where piv_no='PIV/260.20/CNC/0002'
+
+select * from piv_approval
+
+select PIV_NO from piv_detail p, piv_approval a where p.dept_Id = '514.20' 
+and p.status = 'V'
+and p.dept_id = a.dept_id
+and p.status = a.activity
+and user_role = 'ES'
+
+select * from sauserm where user_id = '26020CL1'
+update sauserm set USER_LEVEL = 'CC' where user_id = '26020CC'
+
+select * from PIV_APPROVAL
+
+select status, piv_no from piv_detail where dept_id = '260.20'
+
+SELECT title_Cd, title_Nm FROM Gltitlm 
+WHERE status=2 and title_Cd LIKE 'PIV%'
+
+SELECT b.ac_Cd, trim(c.ac_Nm)  FROM Gltitlm a , Glacgrpm b , glacctm c
+WHERE trim(a.title_Cd) = 'PIV-ASD' AND a.title_Cd = b.title_Cd and b.ac_cd=c.ac_cd ORDER BY b.ac_Cd
+
+select * from Gltitlm where  TITLE_CD='R1610'
+select * from Glacgrpm where title_cd = 'PIV-ASD'
+
+select    b.title_cd ,  a.title_nm, b.ac_cd,c.ac_nm from gltitlm a , glacgrpm b , glacctm c
+where  b.title_cd like 'PIV%'  and a.title_cd = b.title_cd and b.ac_cd=c.ac_cd
+group by b.title_cd, a.title_nm,b.ac_cd,c.ac_nm
+order by b.title_cd;tttt
+
+select * from piv_detail where piv_no = 'PIV/260.20/PIV-CQR/0001'
+
+
+SELECT b.ac_Cd, trim(c.ac_Nm)
+					 FROM Gltitlm a , Glacgrpm b , Glacctm c 
+					 WHERE trim(a.title_Cd) = 'PIV-CQR'
+					AND a.title_Cd = b.title_Cd 
+					 AND trim(b.ac_Cd)=trim(c.ac_Cd) 
+					 ORDER BY b.ac_Cd
+					 
+select a.ACCOUNT_CODE , c.ac_nm, a.amount
+from piv_amount a, Glacctm c  where piv_no = 'PIV/260.20/PIV-CQR/0001'
+and a.ACCOUNT_CODE = c.ac_cd
+
+select * from piv_detail where status = 'R' and DEPT_ID='260.20'
+
+select * from Piv_Detail p, Piv_Approval a 
+where p.dept_Id = '260.20' 
+and p.status = 'S'
+and p.dept_Id = a.dept_Id 
+and p.status = a.activity 
+and a.user_Role = 'CC'
+
+SELECT  b.ac_Cd, trim(c.ac_Nm), is_tax, is_refund
+ FROM Gltitlm a , Glacgrpm b , Glacctm c 
+ WHERE trim(a.title_Cd) = 'PIV-TST'
+ AND a.title_Cd = b.title_Cd 
+ AND trim(b.ac_Cd)=trim(c.ac_Cd) 
+ ORDER BY b.sort_key
+					
+			

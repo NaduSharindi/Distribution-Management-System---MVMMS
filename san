@@ -1,0 +1,2291 @@
+select from aaaaa
+/*****************************************************************************/
+--  PCESTHTT 
+select * from pcesthtt where estimate_no = '548.00/ENC/16/1077'
+select STATUS from pcesthtt where estimate_no = '433.20/ERE/15/0004'
+select * from pcesthtt where dept_id like '547.10%' and status = 49
+--update pcesthtt set status = 22 where estimate_no = '437.10/ENC/14/0941'
+select * from pcesthtt where status = 46 and dept_id = '423.50'
+select project_no from pcesthtt where project_no like '446.20/TMP/12/%' order by project_no
+select * from pcesthtt where estimate_no = '422.30/ENC/13/1851'
+update pcesthtt set ESTIMATED_YEAR = 2013 where estimate_no = '557.20/ENC/13/0242'
+update pcesthtt set CAT_CD = 'MTN' where estimate_no = '526.20/EMT/15/0002'
+update pcesthtt set STATUS = 48 where estimate_no = '431.50/ECR/15/0324'
+update pcesthtt set std_cost = 26239 where estimate_no = '471.20/ENC/16/1369'
+
+select * from pcesthtt where dept_id like '455%'
+--PCESTDTT
+select * from pcestdtt where estimate_no = '441.20/ERE/15/0069' and RES_CD='K1243'
+and res_cd = 'OVERHEAD'
+update pcestdtt set CUSTOMER_QTY = 36.12 where estimate_no = '514.40/ECR/13/0196'
+and res_cd = 'OVERHEAD'
+
+select * from pcesthtt where status = 44 and ESTIMATE_NO like '%/ENC/14/%' 
+order by ESTIMATE_NO
+and dept_id = '541.00'
+select * from pcestdtt where cus_qty is null
+select * from pcestdtt where estimate_no = '452.40/EMT/15/0002' and RES_CD = 'LABOUR'
+update  pcestdtt set UNIT_PRICE = 300, ESTIMATE_QTY = 2689.75,ESTIMATE_COST = 806925 where estimate_no = '452.40/EMT/15/0002' and RES_CD = 'LABOUR'
+--insert into pcestdtt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('454.50/ENC/15/0303',1,'454.50','OVERHEAD','OVERHEAD-COST',2,'HRS.',279,85.2,85.2*279);
+ --insert into pcestdtt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('454.50/ENC/15/0303',1,'454.50','TRANSPORT','TRANSPORT-COST',2,'NO.',1,450,450);
+ --insert into pcestdtt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('454.50/ENC/15/0303',1,'454.50','LABOUR','LABOUR-COST',2,'HRS.',250,85.2,250*85.2);
+ 
+ 
+ insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('454.50/ENC/15/0303',1,'454.50','OVERHEAD','OVERHEAD-COST',2,'HRS.',279,85.2,85.2*279);
+ --insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('454.50/ENC/15/0303',1,'454.50','TRANSPORT','TRANSPORT-COST',2,'NO.',1,450,450);
+ --insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('454.50/ENC/15/0303',1,'454.50','LABOUR','LABOUR-COST',2,'HRS.',250,85.2,250*85.2);
+ 
+ 
+/*****************************************************************************/
+--  PCESTHMT 
+select * from pcesthmt where project_no = '442.50/REJ/15/0090' 
+and dept_id like '423.50%'
+select STD_COST from pcesthmt where estimate_no = '517.50/ECR/15/0132'
+select status from pcesthmt where estimate_no = '442.50/ERE/15/0092'
+
+select * from pcesthmt where estimate_no like '%ESA%' and dept_id = '411.10'
+select DESCR from pcesthmt where estimate_no = '548.00/ENC/16/1077'
+select status from pcesthmt where estimate_no = '442.50/ERE/15/0092'
+select * from pcesthmt where dept_id like '547.10%' and status = 59
+--UPDATE  pcesthmt set LB_RATE_YEAR = 2014 where estimate_no = '446.20/SMC/12/0269'
+update pcesthmt set LB_RATE_YEAR = 2014 where estimate_no = '536.50/ENC/14/0187'
+update pcesthmt set STATUS = 5 where estimate_no = '442.50/ERE/15/0092'
+update pcesthmt set std_cost = 10140 where estimate_no = '441.40/ENC/14/0954'
+
+select status from pcesthmt where project_no = '536.10/SMC/13/0410'
+update pcesthmt set status = 1 where project_no = '514.20/SMC/16/0021'
+update pcesthmt set std_cost = 29718.50 where estimate_no = '413.10/ENC/15/0098'
+update pcesthmt set std_cost = 41,793.40 where project_no = '443.50/SMC/15/0143'
+select * from pcesthmt where dept_id like '423.50%'
+--update pcesthmt set std_cost = 63148 where estimate_no = '542.00/ECR/12/0140'
+
+-- PCESTDMT
+select REV_NO,RES_CD,UNIT_PRICE,ESTIMATE_QTY,ESTIMATE_COST,ISSUED_QTY
+from pcestdmt where estimate_no = '445.20/ECR/15/0158' 
+--and REV_NO = 1 
+order by RES_CD
+delete from pcestdmt where estimate_no = '542.00/EMT/15/0008' and REV_NO = 2
+
+select * from pcestdmt where estimate_no = '445.30/ERE/16/0065' 
+and RES_CD = 'OVERHEAD'
+select * from pcestdmt where estimate_no = '542.00/EMT/15/0008'
+and RES_CD != 'LABOUR' and RES_CD != 'OVERHEAD' and RES_CD != 'TRANSPORT'
+--delete from pcestdmt where estimate_no = '514.10/ECR/12/0197' and RES_CD != 'LABOUR' and RES_CD != 'OVERHEAD' and RES_CD != 'TRANSPORT'
+select * from pcestdmt where estimate_no = '443.10/ESA/13/0016'
+and res_cd = 'OVERHEAD'
+update pcestdmt set ESTIMATE_QTY = 6,ESTIMATE_COST = 1224where estimate_no = '445.20/ENC/13/0525'and res_cd = 'OVERHEAD'
+update pcestdmt set --estimate_qty=188.2,estimate_cost =38392.8, 
+--customer_qty = 181.2,
+ESTIMATE_QTY = 38.6
+,ESTIMATE_COST = 7874.4
+where estimate_no = '457.10/EMT/13/0030'
+and res_cd = 'OVERHEAD'
+--update pcestdmt set estimate_cost = 105.75 where dept_id = '453.20' 
+--and estimate_no = '453.20/EMT/13/0004' and res_cd = 'D0610'
+delete from pcestdmt where estimate_no = '431.50/EMT/15/0566' and REV_NO = 2
+
+select * from pcestdmt where estimate_no = '443.20/EMT/15/0183' and RES_CD = 'LABOUR'
+--insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('513.30/EMT/16/0002',2,'513.30','OVERHEAD','OVERHEAD-COST',2,'HRS.',279,46.95,13099.05)
+ --insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('513.30/EMT/16/0002',2,'513.30','TRANSPORT','TRANSPORT-COST',2,'NO.',1,0,0)
+ --insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('513.30/EMT/16/0002',2,'513.30','LABOUR','LABOUR-COST',2,'HRS.',324,46.95,15211.8)
+ 
+ delete from pcestdmt where ESTIMATE_NO = '443.20/EMT/15/0183' and RES_CD = 'LABOUR'
+ 
+ select std_cost from pcesthmt where estimate_no = '443.20/EMT/15/0183'
+ update pcesthmt set std_cost = 21149.40 where estimate_no = '511.20/E+CR/15/0704'
+/*************************************************************************************/
+------ SPESTLAB ---------------
+select * from spestlab where estimate_no like ' 441.40/ERE/15/0122'  and (LABOUR_CODE = 'RA12.6' ) 
+update spestlab set estimate_no = trim(estimate_no) where estimate_no like '441.40/ETC/16/0009  ' 
+
+select LABOUR_CODE , ITEM_QTY,   UNIT_PRICE, LABOUR_COST from spestlab
+where estimate_no like '441.40/ERE/15/0135' and LABOUR_CODE = 'RA12.6' 
+update spestlab set ITEM_QTY =0.022, LABOUR_COST = UNIT_PRICE*0.022 where estimate_no like '441.40/ERE/15/0135' and LABOUR_CODE = 'RA12.6' 
+
+
+
+and dept_id = '547.20'
+delete from spestlab where estimate_no = '547.00/ECR/14/0219' and dept_id = '547.20'
+update spestlab set ITEM_QTY =0.085 , LABOUR_COST = 935.22 where estimate_no like '445.20/ECR/15/0158' and (LABOUR_CODE = 'RA12.3' ) 
+
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 87 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA16.1'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 436 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA2.1'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 872 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA3.1'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 2398 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA8.4'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 981 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA9.1'
+update spestlab set ITEM_QTY =12 , LABOUR_COST = 564 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'SM1.4'
+
+
+ select * from spestlab where estimate_no = '541.00/ECR/14/0285'
+ 
+  
+ select * from pcestdmt where estimate_no = '542.00/ENC/13/1056' and RES_CD = 'L71402'
+ update pcestdmt set UNIT_PRICE = 197.4, ESTIMATE_COST = 1184.4 where estimate_no = '542.00/ENC/13/1056' and RES_CD = 'L71402'
+ 
+ 
+ select LABOUR_CODE, ACTIVITY_DESCRIPTION, UNIT_PRICE, ITEM_QTY, LABOUR_COST
+ from spestlab where estimate_no like '513.30/ECR/14/0357'
+/*****************************************************************************/
+--  WIRING DETAIL / WIRING_LAND_DETAIL
+select * from WIRING_LAND_DETAIL where application_id = '457.10/ACR/13/0456'
+select * from WIRING_LAND_DETAIL where NEIGHBOURS_ACC_NO like '4194396%'
+update WIRING_LAND_DETAIL set 
+--connection_type = 15 
+--tariff_cat_code = 'GP'
+--,tariff_code = 31
+--PHASE = 3
+CONNECTION_TYPE = 60
+where application_id = '542.00/ANC/13/0749'
+
+NEIGHBOURS_ACC_NO 
+select * from WIRING_LAND_DETAIL where EXISTING_ACC_NO='4114239502'
+/******************************************************************************/
+---------------USER LEVELS AND LIMITS / SAUSERM --------
+SELECT * FROM SAUSERM WHERE USER_ID like '%442EA1%'
+USER_ID like '%wps%'
+USER_ID like '%BCL%'
+USER_LEVEL = 'ITOA'
+JOB_TITLE = 'TECHNOLOGIST  ASSISTANT'
+ 
+SELECT * FROM SAUSERM WHERE USER_LEVEL = 'ES' AND USER_ID like '%SMCR2%'
+SELECT * FROM SAUSERM WHERE RPT_USER = '451.10'
+UPDATE SAUSERM SET USER_LEVEL = 'EA'
+--,RPT_USER='514.00' 
+WHERE  USER_ID ='SMCR2'
+
+select * from appestlim where dept_id like '%442%' 
+and APPLICATION_TYPE = 'NC'
+and approval_type = 'JOB'
+and user_level = 'EA'
+order by APPLICATION_TYPE, LIMIT_FROM
+and user_level = 'EA'
+
+order by status_from
+update appestlim set limit_from = 250000,status_to=58 where dept_id = '542.00' and user_level = 'CE' and approval_type = 'JOB'
+insert into appestlim (dept_id,application_type,user_level,limit_from,limit_to,
+status_from,status_to,upd_user,upd_date,upd_time,approval_type) values
+('542.00','NC','EE',50000,250000,57,61,'IMPORT',to_date('15/02/2013','dd/mm/yyyy'),'09.30','JOB')
+insert into
+
+-------------------------------------------------------------------------
+--DELETING SERVICE ESTIMATE---
+DELETE FROM SPSEREST WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETPOL WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETSTU WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETSTY WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETWIR WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+UPDATE SPESTEDY SET STATUS = 'A' WHERE REFERENCE_NO = '423.50/ENC/13/0038' 
+
+/**********************************************************************************/
+---------- SERVICE ESTIMATE / SPESEREST ------------------------
+.
+select * from SPSEREST where APPLICATION_NO = '434.20/EAM/15/0003'
+select * from SPSETWIR where APPLICATION_NO = '512.20/ENC/13/0265'
+select IS_SERVICE_CONVERSION from SPSEREST where APPLICATION_NO = '548.00/ENC/14/0887'
+update SPSETWIR set TOTAL_LENGTH = 0 where APPLICATION_NO = '437.40/ECR/15/0046'
+update SPSEREST set TOTAL_LENGTH = 0 where APPLICATION_NO = '437.40/ECR/15/0046'
+select IS_SERVICE_CONVERSION from speststd  
+select IS_STANDARD_VC from SPSEREST where application_no = '512.20/ENC/13/0265'
+UPDATE SPSEREST SET DISTANCE_FROM_SS = 345 WHERE application_no = '551.60/ENC/14/0452' 
+UPDATE SPSEREST SET 
+--IS_STANDARD_VC = 'Y' 
+TOTAL_LENGTH = 0
+WHERE application_no = '434.20/EAM/15/0003' 
+
+/**********************************************************************************/
+---------- SPESTSTD ------------------------
+select * from speststd where estimate_no like '445.20/ECR/16/0243%'
+select * from speststd where estimate_no = '441.10/ECR/16/0097'
+select * from speststdh where REV_NO != 1 and REV_NO != 2
+/*
+--update speststd set 
+--fixed_cost = 20000
+--variable_cost=26486
+--other_cost=596500
+--labour_cost = 0
+--OTHER_LABOUR_COST = 18276.72
+--,overhead_cost = 0
+--,contingency_cost = 0
+--,security_deposit = 1000
+--,total_cost = 51000
+--,transport_cost = 0
+--,NBT_AMOUNT = 400
+--,NBT_PRESENT = 2
+--addl_deposit = 92914.75
+--,tax_amount = 0
+--,TAX_PRESENT=0
+conversion_cost = 66928
+--CABLE_TYPE = '162C'
+--conversion_cost = 455880
+--CONVERSION_LENGTH_2P = 0
+--,estimated_year = 2013
+--LINE_LENGTH = 48
+--IS_STANDARD_VC = 'N'
+--SERVICE_DISTANCE = ,
+--SIN_NO
+ where estimate_no = '445.20/ECR/16/0243'
+ */
+select count(*) from speststdh where estimate_no = '433.10/ECR/14/0224'
+delete from speststdh where estimate_no = '433.10/ECR/14/0224'
+update speststdh set TOTAL_COST = 66045 where estimate_no = '534.10/ENC/14/0438'
+
+select CONTINGENCY_PRESENT, count(CONTINGENCY_PRESENT) as jobno from speststd where CONTINGENCY_PRESENT >0
+--and dept_id = '558.30'
+group by CONTINGENCY_PRESENT
+order by jobno
+
+select * from speststd where CONTINGENCY_PRESENT = 50
+UPDATE speststd SET IS_STANDARD_VC = 'Y' WHERE estimate_no = '512.20/ENC/13/0265' 
+/**********************************************************************************/
+---------- SPESTSTDH ------------------------
+select * from speststdh where estimate_no = '471.10/ENC/14/0901'
+delete from speststdh where estimate_no = '471.10/ENC/14/0901' and REV_NO = 6 and dept_id = '471.10'
+
+/**********************************************************************************/
+---------- SPESTLAB ------------------------
+select * from spestlab where estimate_no like '551.20/ETC/16/0004%'
+select * from pcestdtt where estimate_no = '541.00/ECR/14/0146'
+update spestlab set dept_id = '541.20' where estimate_no = '541.00/ECR/14/0146'
+update spestlab set estimate_no = trim(estimate_no) where estimate_no like '551.20/ETC/16/0004%'
+
+/*************************************************************************/
+---- PIV DETAIL ----------
+
+select * from piv_detail where piv_no = 'PIV/432.20/ENC/16/1384'
+select * from piv_detail where reference_no = '446.10/ENC/16/0408' 
+update piv_detail set 
+--PAYMENT_MODE = 'Q'
+--paid_DATE = to_date('18/06/2014','dd/mm/yyyy')
+--,CHEQUE_DATE = to_date('25/06/2013','dd/mm/yyyy')
+--,CHEQUE_BANK_CODE = '7135'
+--,CHEQUE_BRANCH_CODE = '241'
+--,CHEQUE_NO = '208791'*/
+--SER_CONN_OR_ELEC_SCH = 0, 
+--MISCELLANEOUS_INCOME = 4361.5,
+SUB_TOTAL = 7063
+--REFERENCE_TYPE = 'EST'
+--PIV_SEQ_NO = 2
+--PIV_AMOUNT = 250
+--,SER_CONN_OR_ELEC_SCH = 637
+,NBT_AMOUNT = 0
+--, grand_total = 250
+--status = 'D'
+--reference_type = 'ELN'
+where piv_no = 'PIV/432.20/ENC/16/1384'
+
+select * from spcstngm where DEPT_ID= '541.20' where 
+
+/******************************************************************************/
+---------------REPORTS --------
+select * from REPORT_SMC where REPORT_ID = 'R0053'
+update REPORT_SMC set IS_ACTIVE = 0 where REPORT_ID = 'R0001' 
+select * from REPORT_SMC_PARA where REPORT_ID = 'R0054'
+select * from REPORT_SMC_CATEGORY
+
+update REPORT_SMC_PARA set SELECTED_LIST = '11111111111' where PARA_ID = 6 and REPORT_ID = 'R0019B'
+
+update REPORT_SMC set ORDER_SQ = '00' where REPORT_ID = 'R0005';
+update REPORT_SMC set ORDER_SQ = '02' where REPORT_ID = 'R0009';
+update REPORT_SMC set ORDER_SQ = '04' where REPORT_ID = 'R0010';
+update REPORT_SMC set ORDER_SQ = '06' where REPORT_ID = 'R0007';
+update REPORT_SMC set ORDER_SQ = '08' where REPORT_ID = 'R0008';
+update REPORT_SMC set ORDER_SQ = '10' where REPORT_ID = 'R0037';
+update REPORT_SMC set ORDER_SQ = '12' where REPORT_ID = 'R0015';
+update REPORT_SMC set ORDER_SQ = '14' where REPORT_ID = 'R0019A';
+update REPORT_SMC set ORDER_SQ = '16' where REPORT_ID = 'R0019B';
+update REPORT_SMC set ORDER_SQ = '18' where REPORT_ID = 'R0060';
+update REPORT_SMC set ORDER_SQ = '20' where REPORT_ID = 'R0048';
+update REPORT_SMC set ORDER_SQ = '22' where REPORT_ID = 'R0047';
+update REPORT_SMC set ORDER_SQ = '24' where REPORT_ID = 'R0019';
+update REPORT_SMC set ORDER_SQ = '26' where REPORT_ID = 'R0054';
+update REPORT_SMC set ORDER_SQ = '28' where REPORT_ID = 'R0028';
+update REPORT_SMC set ORDER_SQ = '30' where REPORT_ID = 'R0029';
+update REPORT_SMC set ORDER_SQ = '32' where REPORT_ID = 'R0059';
+update REPORT_SMC set ORDER_SQ = '34' where REPORT_ID = 'R0063';
+
+select * from REPORT_SMC_PARA where REPORT_ID = 'R0004' and PARA_ID = 6
+select * from REPORT_SMC where category_id = '3' order by ORDER_SQ
+insert into REPORT_SMC 
+(REPORT_ID, REPORT_NAME,     CATEGORY_ID, IS_ACTIVE, ORDER_SQ)
+values ('R0053', 'PIV Issued Report', 2, 1, 2);
+insert into REPORT_SMC_PARA (PARA_ID, REPORT_ID, SELECTED_LIST)
+values (1,'R0053',null);
+insert into REPORT_SMC_PARA (PARA_ID, REPORT_ID, SELECTED_LIST)
+values (2,'R0053',null);
+insert into REPORT_SMC_PARA (PARA_ID, REPORT_ID, SELECTED_LIST)
+values (3,'R0053',null);
+update REPORT_SMC set ORDER_SQ = 12 where REPORT_ID = 'R0054';
+update REPORT_SMC set REPORT_NAME = 'Finished Jobs - SIN number wise' where REPORT_ID = 'R0048';
+/******************************************************************************/
+
+select * from splpsvcm where dept_id = '548.00'
+
+select * from piv_detail where piv_no = 'PIV/444.40/ANC/14/0743'
+delete piv_detail where piv_no = 'PIV/472.20/ANC/14/0794'
+update piv_detail set PAID_DATE= to_date('27/03/2014','dd/mm/yyyy')
+where piv_no = 'PIV/551.30/ANC/14/0212'
+
+select * from piv_detail where reference_no = '557.30/TMP/14/0002'
+select * from PIV_DETAIL where PAYMENT_MODE = 'Q'
+select * from piv_detail where reference_type = 'ELN' and PAID_DATE is null
+select * from piv_detail where BANK_PAID_DATE is not null
+select * from piv_detail where dept_id = '439.20' and REFERENCE_TYPE = 'APP' and piv_no like '%/14/%' order by PIV_NO desc
+
+insert into piv_detail 
+(PIV_NO, PIV_SEQ_NO, DEPT_ID, PIV_RECEIPT_NO, REFERENCE_TYPE, REFERENCE_NO, APP_REFERENCE_NO, ID_NO,  PIV_DATE,   PIV_AMOUNT, 
+CEB_BRANCH_NAME, BANK_CODE, BRANCH_CODE, PAYMENT_MODE, PAID_DATE, MISCELLANEOUS_INCOME, ELECTRICITY_DEBTORS, SECURITY_DEPOSIT, 
+SER_CONN_OR_ELEC_SCH, TENDER_DEPOSIT, MISCELLANEOUS_DEPOSIT, CASH_IN_TRANSIT, FOR_DISHONORED_CHEQUE, SUB_TOTAL, VAT, GRAND_TOTAL, 
+PREPARED_BY,   CONFIRMED_DATE, CONFIRMED_TIME, STATUS,  ADD_DATE,   ADD_TIME,          DESCRIPTION,            PROCESSING_FEE
+ ) values
+ ('PIV/439.20/ANC/14/0715', 1, '439.20', 'CP1024841', 'APP', '439.20/ANC/14/0715', '439.20/ANC/14/0715', '872012478v', to_date('25/11/2014','dd/mm/yyyy'), 250,  
+ 'THULHIRIYA CONSUMER SERVICE CENTRE', '7135', '270', 'C', to_date('25/11/2014','dd/mm/yyyy'), 250, 0, 0,
+ 0, 0, 0, 0, 0, 250, 0, 250,
+ '43920DEO1', to_date('25/11/2014','dd/mm/yyyy'), '11.00', 'C', to_date('25/11/2014','dd/mm/yyyy'), '10.00', 'APPLICATION FEE', 250)
+ 
+/*************************************************************************/
+---- APPLICATIONS ----------
+select * from applications where APPLICATION_NO = '553.20/ENC/16/0113'
+select distinct application_sub_type from applications where application_id = '522.60/ANC/14/0520'
+update applications set application_sub_type='FF'  where application_id = '522.60/ANC/14/0554'
+update  applications set 
+status = 'D' 
+--APPLICATION_TYPE = 'CR' 
+--APPLICATION_SUB_TYPE = ''
+where application_id = '523.70/ANC/14/1127'
+select * from piv_detail where  
+piv_no like 'PIV/423.20/ANC/13/0658' 
+SPESTEDY
+select * from SPESTEDY where REFERENCE_NO = '461.20/ENC/15/0061'
+delete from SPESTEDY where appointment_id = '2015/02/200' and dept_id = '461.20'
+update  applications set APPLICATION_NO = '' where application_id = '431.50/ANC/13/0612'
+SELECT ID_NO FROM APPLICANT WHERE (ID_NO like '7%v' or ID_NO like '8%v'
+or ID_NO like '9%v') and (ID_NO not like '%00%')
+
+SELECT * FROM APPLICANT where TELEPHONE_NO = '0714118431'
+UPDATE APPLICANT SET STR
+EET_ADDRESS = 'CEYLON ELECTRICITY BOARD' WHERE ID_NO = '000000000x'
+
+select * from application_reference where APPLICATION_NO = '424.20/ENC/14/0092'
+update application_reference set APPLICATION_NO = ' ' where application_id = '431.50/ANC/13/0612'
+update application_reference set ID_NO = 'pv9478' where projectno = '542.20/SMC/13/0271'
+
+select * from applications where APPLICATION_NO = '526.20/EMT/15/0002'
+4114239502
+select * from application_reference where dept_id = '514.20' and projectno like '%/SMC/%' and projectno is not null order by projectno desc 
+/*************************************************************************/
+-- ALLOCATE/ DEALLOCATE /  CONTRACTOR -------------
+select * from spestcnt where dept_id = '512.20'
+
+select * from spestcnd where PROJECT_NO like '%511.20/CRJ/15/0004%' and status = 'F'
+select * from spestcnd where dept_id = '511.30' and PROJECT_NO = '441.20/MTN/13/0087'
+update spestcnd set 
+--FINISHED_DATE = to_date('25/11/2013','dd/mm/yyyy'), 
+--status = 'F' 
+CONTRACTOR_ID = '0003'
+where dept_id = '512.20' and PROJECT_NO = '512.20/MTN/14/0111'
+select status from pcesthmt where project_no = '441.20/SMC/11/3106'
+update spestcnt set status = 0, CONTRACTOR_NAME = '', CONTRACTOR_ADDRESS=''  where dept_id = '431.50' and CONTRACTOR_ID = '0006'
+
+select CONTRACTOR_NAME from spestcnt where dept_id = '534.80' and contractor_id = '0009'
+/*************************************************************************/
+--DELETING A JOB
+select status from pcesthmt  where  estimate_no='514.20/ENC/15/0028'
+select * from pcesthtt  where  estimate_no='514.20/ENC/15/0028'
+delete from pcesthmt where  estimate_no='514.20/ENC/15/0028' and status=22;
+delete from pcestdmt where  estimate_no='514.20/ENC/15/0028';
+update APPLICATION_REFERENCE set projectno=null where  application_no='514.20/ENC/15/0028';
+delete from pcprjbal where  estimate_no='514.20/ENC/15/0028';
+delete from pcesthtt where  estimate_no='514.20/ENC/15/0028' and rev_no = 3;
+delete from pcestdtt where  estimate_no='514.20/ENC/15/0028' and rev_no = 3;
+update pcesthtt set status=33 where  estimate_no='514.20/ENC/15/0028';
+
+/*************************************************************************/
+--CANECEL ESTIMATE NO/APPLICATION NO AND APP FEE
+delete piv_detail where piv_no = 'PIV/423.20/ANC/14/0925'
+update application_reference set APPLICATION_NO = ' ' where application_id = '431.50/ANC/13/0612'
+update  applications set APPLICATION_NO = '', set status = 'N' where application_id = '431.50/ANC/13/0612'
+
+/*************************************************************************/
+--MOVE APPLICATION FROM ONE DEPOT TO ANOTHER (434.30-->434.20)
+SELECT * FROM APPLICATIONS WHERE APPLICATION_ID = '434.30/ANC/13/0259'
+INSERT INTO APPLICATIONS 
+(APPLICATION_ID, DEPT_ID, APPLICATION_NO, APPLICATION_TYPE, APPLICATION_SUB_TYPE, SUBMIT_DATE, ID_NO, PREPARED_BY, CONFIRMED_BY, CONFIRMED_DATE, CONFIRMED_TIME, ALLOCATED_TO, ALLOCATED_BY, ALLOCATED_DATE, ALLOCATED_TIME, STATUS, ADD_USER,  ADD_DATE, ADD_TIME, UPD_USER, UPD_DATE, UPD_TIME, DESCRIPTION, FROM_DATE, TO_DATE, DURATION_IN_DAYS, DURATION_TYPE, DURATION, DISCONNECTED_WITHIN, FINALIZED_WITHIN, IS_LOAN_APP, IS_VISITNG_NEEDED, SAMURDHI_MEMBER)
+VALUES
+('434.30/ANC/13/0259', '434.20',  NULL, 'NC','PM', to_date('07/05/2013','dd/mm/yyyy'),  '653342772v', '43430DEO1',   '43430DEO1',    to_date('07/05/2013','dd/mm/yyyy') ,    '09:55:47 AM',    NULL,         NULL ,        NULL,           NULL,           'A',      '43430DEO1', to_date('07/05/2013','dd/mm/yyyy') ,'09:43:40 AM', NULL,     NULL ,    NULL,     NULL,        NULL,      NULL,                NULL, NULL,              NULL ,               NULL,             NULL, 'N',           NULL  ,            'N')
+UPDATE WIRING_LAND_DETAIL SET DEPT_ID = '434.20' WHERE APPLICATION_ID = '434.30/ANC/13/0259' AND DEPT_ID = '434.30'
+DELETE FROM APPLICATIONS WHERE APPLICATION_ID = '434.30/ANC/13/0259' AND DEPT_ID = '434.30'
+update  applications set APPLICATION_NO = NULL, status = 'P' where application_id = '434.30/ANC/13/0259'
+DELETE FROM application_reference where application_id = '434.30/ANC/13/0259'
+
+/*************************************************************************/
+--JOB FINISH
+select * from SPESTCND where PROJECT_NO = '443.20/LSF/13/0004'
+update  SPESTCND set status = 'F', FINISHED_USER = 'SMCR2', FINISHED_DATE = to_date('06/06/2013','dd/mm/yyyy'),  FINISHED_TIME = '10:00 AM' where PROJECT_NO = '443.20/MTN/13/0219'
+
+
+/********************************************************************************/
+-- Export to billing
+
+select * from spexpjob where project_no = '534.90/SMC/16/1208'
+export time 11.18 am
+
+select * from spodrcrd where project_no = '521.20/SMC/14/0596'
+
+
+
+/********************************************************************************/
+--------------------- BANK / BRANCH ----------------------
+
+select * from bank 
+--where bank_code = '7080'
+order by BANK_NAME
+insert into bank (bank_code,bank_name) values ('7080','NSB')
+
+select * from bank_branch where BANK_CODE LIKE '7135%' ORDER BY BRANCH_NAME
+insert into bank_branch
+(BRANCH_CODE, BANK_CODE, BRANCH_NAME, BRANCH_ADDRESS)
+values
+('02','7135','MATALE','MATALE')
+
+SELECT * FROM bank_branch WHERE BANK_CODE LIKE '2%'ORDER BY BRANCH_NAME 
+SELECT * FROM BANK
+  
+/********************************************************************************/
+--------------------- APPOINTMENT ----------------------
+
+select * from SPESTEDY where reference_no = '536.20/ENC/14/3170' and APPOINTMENT_ID = '2014/11/101'
+
+delete from SPESTEDY where reference_no = '536.20/ENC/14/3170' and APPOINTMENT_ID = '2014/11/101'
+
+/********************************************************************************/
+--------------------- APPROVAL ----------------------
+
+select * from approval where REFERENCE_NO = '521.20/SMC/13/0371'
+select * from approval where APPROVAL_TYPE LIKE '%RJ%'
+ SELECT APPLICATIONS.APPLICATION_NO, GLDEPTIN.DEPT_FULL_NAME
+  FROM
+       APPLICATIONS JOIN GLDEPTIN ON APPLICATIONS.DEPT_ID = GLDEPTIN.DEPT_ID
+       where trim(APPLICATIONS.APPLICATION_NO) =  TRIM('456.10/ESA/13/0001')
+   
+
+  
+  /********************************************************************************/
+--------------------- MATERIALS ----------------------
+ select * from inwrhmtm where DEPT_ID like '441.%' and MAT_CD = 'A0430'
+ select * from inmatm where  MAT_CD = 'A0430'
+ select * from inwrhmap where  DEPT_ID like '441.%'
+
+ select * from SPCNDMAT where  PHASE = 3 and CONNECTION_TYPE = 60
+ insert into SPCNDMAT (PHASE, CONNECTION_TYPE, WIRING_TYPE, CONDUCTOR_TYPE, MAT_CD, MEASUREMENT_FACTOR, DEPT_ID)
+ values (3 , 60, 'OH','FLY',           'D0110',                             0.702, '557.20')
+
+-- line breaks
+select description from spestedy_cons where description like '%'||chr(10)||'%'
+
+select * from cbpmthtt where dept_id = '260.20' order by doc_no desc
+
+select b.projectNo,a.CONSUMER_NAME,SERVICE_STREET_ADDRESS,SERVICE_SUBURB,SERVICE_CITY ,c.connected_Date, a.FINISHED_DATE  
+from Spestcnd a,Application_Reference b , Spodrcrd c, APPLICATIONS d, wiring_land_detail w
+WHERE TRIM(a.project_No) = b.projectNo
+and b.projectNo = TRIM(c.project_No) 
+and b.application_no = d.application_no
+and w.APPLICATION_ID = d.APPLICATION_ID
+and c.connected_Date <= to_date('2014-07-07','yyyy-mm-dd')
+and d.APPLICATION_TYPE in ('NC')
+and a.dept_Id like '534.30'
+and (a.is_exported ='N' or a.is_exported is null )
+and a.project_No LIKE '%SMC%' 
+ORDER BY a.project_No
+ 
+select b.projectNo,a.CONSUMER_NAME,SERVICE_STREET_ADDRESS,SERVICE_SUBURB,SERVICE_CITY ,c.connected_Date, a.FINISHED_DATE ,(select dept_nm from gldeptm where dept_id =  $P!{@costctr}) AS CCT_NAME
+from Spestcnd a,Application_Reference b , Spodrcrd c, APPLICATIONS d, wiring_land_detail w
+WHERE TRIM(a.project_No) = b.projectNo
+and b.projectNo = TRIM(c.project_No)
+and b.application_no = d.application_no
+and w.APPLICATION_ID = d.APPLICATION_ID
+and c.connected_Date <= to_date('2014-07-07','yyyy-mm-dd')
+and d.APPLICATION_TYPE in ('NC')
+and a.dept_Id = '534.30'
+and (a.is_exported ='N' or a.is_exported is null )
+and a.project_No LIKE '%SMC%'
+ORDER BY a.project_No
+
+
+/********************************************************************************/
+--------------------- LABOUR RATES / SPLABRAT ----------------------
+select * from splabrat where dept_id = '445.20' and year ='2014' and LABOUR_CODE = 'RB7.9'
+select * from splabrat where LABOUR_CODE = 'SM5.5'
+
+update splabrat set year = '2013' where dept_id = '435.60' and year ='2014'
+
+/********************************************************************************/
+--------------------- REPORTS ----------------------
+select * from report_smc
+select para_id from report_smc_para where report_id = 'R0039'
+select distinct para_id from report_smc_para order by para_id
+select * from report_smc_para where para_id = 10
+select * from report_smc_category
+
+/********************************************************************************/
+--------------------- SPRATESM / rates ----------------------
+select * from spratesm where dept_id = '541.40'
+
+/********************************************************************************/
+--------------------- REPORTS ----------------------
+select * from report_smc where REPORT_ID = 'R0058'
+update report_smc set REPORT_NAME = 'Application Status (New Connection)' where REPORT_ID = 'R0058'
+
+
+/********************************************************************************/
+----------  LOAN ----------------------------------------
+select * from spapplon where APPLICATION_NO = '534.90/ENC/15/1137'
+
+/********************************************************************************/
+
+select * from Spreconn
+
+
+select * from cbpmthmt where dept_id = '521.00' and doc_no in (
+'521.00/PSO/14/1162'
+         ,'521.00/PSO/14/1163'
+         ,'521.00/PSO/14/1164'
+         ,'521.00/PSO/14/1165'
+         ,'521.00/PSO/14/1166'
+         ,'521.00/PSO/14/1167'
+         ,'521.00/PSO/14/1168'
+         ,'521.00/PSO/14/1169'
+         ,'521.00/PSO/14/1170'
+         ,'521.00/PSO/14/1171'
+         ,'521.00/PSO/14/1173'
+         ,'521.00/PSO/14/1174'
+         ,'521.00/PSO/14/1175'
+         ,'521.00/PSO/14/1176'
+         ,'521.00/PSO/14/1177'
+         ,'521.00/PSO/14/1179'
+         ,'521.00/PSO/14/1181'
+         ,'521.00/PSO/14/1184'
+         ,'521.00/PSO/14/1185'
+         ,'521.00/PSO/14/1186'
+);
+
+update cbpmthmt set status=3,chq_run=null where  dept_id = '521.00' and doc_no in (
+		'521.00/PSO/14/1162'
+         ,'521.00/PSO/14/1163'
+         ,'521.00/PSO/14/1164'
+         ,'521.00/PSO/14/1165'
+         ,'521.00/PSO/14/1166'
+         ,'521.00/PSO/14/1167'
+         ,'521.00/PSO/14/1168'
+         ,'521.00/PSO/14/1169'
+         ,'521.00/PSO/14/1170'
+         ,'521.00/PSO/14/1171'
+         ,'521.00/PSO/14/1173'
+         ,'521.00/PSO/14/1174'
+         ,'521.00/PSO/14/1175'
+         ,'521.00/PSO/14/1176'
+         ,'521.00/PSO/14/1177'
+         ,'521.00/PSO/14/1179'
+         ,'521.00/PSO/14/1181'
+         ,'521.00/PSO/14/1184'
+         ,'521.00/PSO/14/1185'
+         ,'521.00/PSO/14/1186'
+);
+
+ select * from splabrat where 	LABOUR_CODE = 'SM1.4' and dept_id = '445.20'
+ 
+ 
+ select * from piv_detail where reference_no like '433.50/ENC/14/0697%'
+ 
+update  piv_detail set reference_no = '433.50/ENC/14/0697' where reference_no like '433.50/ENC/14/0697%'
+ 
+  select * from piv_detail where reference_no = '433.50/ENC/14/0697'
+  
+  select * from spcrconv where FROM_PHASE = 1 and TO_PHASE = 3
+  select * from Spcrconvh
+  
+select * from APPESTLIM where dept_id like '534.30%' and APPLICATION_TYPE='NC'
+INSERT INTO APPESTLIM (DEPT_ID,APPLICATION_TYPE,USER_LEVEL,LIMIT_FROM,LIMIT_TO,STATUS_FROM,STATUS_TO,UPD_USER,UPD_DATE,UPD_TIME,APPROVAL_TYPE) VALUES ('534.00','NC','EA',25000,50000,45,46,'IMPORT',{d '2014-09-25'},'11:53:50am','EST');
+INSERT INTO APPESTLIM (DEPT_ID,APPLICATION_TYPE,USER_LEVEL,LIMIT_FROM,LIMIT_TO,STATUS_FROM,STATUS_TO,UPD_USER,UPD_DATE,UPD_TIME,APPROVAL_TYPE) VALUES ('534.00','NC','EA',25000,50000,56,57,'IMPORT',{d '2014-09-25'},'11:53:50am','JOB');
+select * from APPESTLIM where dept_id like '535.00%' and APPLICATION_TYPE='NC' and user_level = 'EA'
+update APPESTLIM set LIMIT_FROM = 50000 where dept_id like '534.00%' and APPLICATION_TYPE='NC' and user_level = 'EE'
+delete from APPESTLIM where dept_id like '535.00%' and APPLICATION_TYPE='NC' and user_level = 'EA'
+
+
+SELECT APPLICATIONS.APPLICATION_NO, PIV_DETAIL.PIV_NO,
+  PIV_DETAIL.PIV_DATE, PIV_DETAIL.PIV_AMOUNT, PIV_DETAIL.CONFIRMED_DATE,
+  APPLICATIONS.APPLICATION_NO,APPLICATIONS.SUBMIT_DATE, PCESTHMT.PROJECT_NO,
+  APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME, APPLICANT.STREET_ADDRESS,
+  APPLICANT.SUBURB, APPLICANT.CITY, SPESTCND.AMOUNT,
+  SPESTCND.SEAL_NO, SPESTCND.FINISHED_DATE, SPESTCND.STATUS,
+  SPESTCNT.CONTRACTOR_NAME, SPESTCNT.CONTRACTOR_ADDRESS,
+  SPODRCRD.METER_NO_1, SPODRCRD.INIT_READING_1,
+  SPODRCRD.METER_NO_2, SPODRCRD.INIT_READING_2,
+  SPODRCRD.METER_NO_3, SPODRCRD.INIT_READING_3,
+  WIRING_LAND_DETAIL.NEIGHBOURS_ACC_NO, WIRING_LAND_DETAIL.PHASE,
+  WIRING_LAND_DETAIL.CONNECTION_TYPE, WIRING_LAND_DETAIL.TARIFF_CAT_CODE,
+  WIRING_LAND_DETAIL.TARIFF_CODE, SPSEREST.TOTAL_LENGTH,
+  SPSEREST.SIN, SPSEREST.WIRING_TYPE, SPODRCRD.CONNECTED_DATE,
+  WIRING_LAND_DETAIL.SERVICE_STREET_ADDRESS, WIRING_LAND_DETAIL.SERVICE_SUBURB,
+  WIRING_LAND_DETAIL.SERVICE_CITY, SPEXPJOB.ACCOUNT_NO,
+  SPEXPJOB.ACC_CREATED_DATE, PIV_DETAIL.PIV_RECEIPT_NO
+  FROM
+       PCESTHMT JOIN APPLICATIONS JOIN PIV_DETAIL ON TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(PIV_DETAIL.REFERENCE_NO)
+    OR  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(PIV_DETAIL.REFERENCE_NO) ON  TRIM(PCESTHMT.ESTIMATE_NO) =  TRIM(APPLICATIONS.APPLICATION_NO) JOIN APPLICANT ON APPLICATIONS.ID_NO = APPLICANT.ID_NO JOIN SPESTCND ON PCESTHMT.PROJECT_NO = SPESTCND.PROJECT_NO JOIN SPESTCNT ON SPESTCND.CONTRACTOR_ID = SPESTCNT.CONTRACTOR_ID
+    AND SPESTCND.DEPT_ID = SPESTCNT.DEPT_ID JOIN SPODRCRD ON SPESTCND.PROJECT_NO = SPODRCRD.PROJECT_NO JOIN WIRING_LAND_DETAIL ON  TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(WIRING_LAND_DETAIL.APPLICATION_ID) JOIN SPSEREST ON  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(SPSEREST.APPLICATION_NO) LEFT OUTER JOIN SPEXPJOB ON PCESTHMT.PROJECT_NO = SPEXPJOB.PROJECT_NO
+  WHERE APPLICATIONS.DEPT_ID = '536.50'
+ AND (SPESTCND.STATUS = 'F' or SPESTCND.STATUS = 'B')
+    AND SPESTCND.CONTRACTOR_ID IN (
+    SELECT SPESTCNT.CONTRACTOR_ID
+      FROM SPESTCNT
+      WHERE SPESTCNT.DEPT_ID  = '536.50' )
+AND  PCESTHMT.DEPT_ID =  '536.50'
+    AND SPESTCND.FINISHED_DATE >= to_date('29/09/2014','dd/mm/yyyy')
+    AND SPESTCND.FINISHED_DATE <=  to_date('02/10/2014','dd/mm/yyyy')
+AND  PCESTHMT.PROJECT_NO LIKE  '%SMC%'
+  ORDER BY PCESTHMT.PROJECT_NO ASC
+  
+  select * from SPESTCND where dept_id = '536.50'
+  AND SPESTCND.FINISHED_DATE >= to_date('29/09/2014','dd/mm/yyyy')
+    AND SPESTCND.FINISHED_DATE <=  to_date('02/10/2014','dd/mm/yyyy')
+    AND (SPESTCND.STATUS = 'F' or SPESTCND.STATUS = 'B')
+    
+    
+    SELECT APPLICATIONS.APPLICATION_NO, PIV_DETAIL.PIV_NO,
+  PIV_DETAIL.PIV_DATE, PIV_DETAIL.PIV_AMOUNT, PIV_DETAIL.CONFIRMED_DATE,
+  APPLICATIONS.APPLICATION_NO,APPLICATIONS.SUBMIT_DATE, PCESTHMT.PROJECT_NO,
+  APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME, APPLICANT.STREET_ADDRESS,
+  APPLICANT.SUBURB, APPLICANT.CITY, SPESTCND.AMOUNT,
+  SPESTCND.SEAL_NO, SPESTCND.FINISHED_DATE, SPESTCND.STATUS,
+  SPESTCNT.CONTRACTOR_NAME, SPESTCNT.CONTRACTOR_ADDRESS,
+  SPODRCRD.METER_NO_1, SPODRCRD.INIT_READING_1,
+  SPODRCRD.METER_NO_2, SPODRCRD.INIT_READING_2,
+  SPODRCRD.METER_NO_3, SPODRCRD.INIT_READING_3,
+  WIRING_LAND_DETAIL.NEIGHBOURS_ACC_NO, WIRING_LAND_DETAIL.PHASE,
+  WIRING_LAND_DETAIL.CONNECTION_TYPE, WIRING_LAND_DETAIL.TARIFF_CAT_CODE,
+  WIRING_LAND_DETAIL.TARIFF_CODE, SPSEREST.TOTAL_LENGTH,
+  SPSEREST.SIN, SPSEREST.WIRING_TYPE, SPODRCRD.CONNECTED_DATE,
+  WIRING_LAND_DETAIL.SERVICE_STREET_ADDRESS, WIRING_LAND_DETAIL.SERVICE_SUBURB,
+  WIRING_LAND_DETAIL.SERVICE_CITY, SPEXPJOB.ACCOUNT_NO,
+  SPEXPJOB.ACC_CREATED_DATE, PIV_DETAIL.PIV_RECEIPT_NO
+  FROM
+       PCESTHMT JOIN APPLICATIONS JOIN PIV_DETAIL ON TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(PIV_DETAIL.REFERENCE_NO)
+    OR  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(PIV_DETAIL.REFERENCE_NO) ON  TRIM(PCESTHMT.ESTIMATE_NO) =  TRIM(APPLICATIONS.APPLICATION_NO) JOIN APPLICANT ON APPLICATIONS.ID_NO = APPLICANT.ID_NO JOIN SPESTCND ON PCESTHMT.PROJECT_NO = SPESTCND.PROJECT_NO JOIN SPESTCNT ON SPESTCND.CONTRACTOR_ID = SPESTCNT.CONTRACTOR_ID
+    AND SPESTCND.DEPT_ID = SPESTCNT.DEPT_ID JOIN SPODRCRD ON SPESTCND.PROJECT_NO = SPODRCRD.PROJECT_NO JOIN WIRING_LAND_DETAIL ON  TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(WIRING_LAND_DETAIL.APPLICATION_ID) JOIN SPSEREST ON  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(SPSEREST.APPLICATION_NO) LEFT OUTER JOIN SPEXPJOB ON PCESTHMT.PROJECT_NO = SPEXPJOB.PROJECT_NO
+  WHERE APPLICATIONS.DEPT_ID = '536.50'
+ AND (SPESTCND.STATUS = 'F' or SPESTCND.STATUS = 'B')
+    AND SPESTCND.CONTR
+    ACTOR_ID IN (
+    SELECT SPESTCNT.CONTRACTOR_ID
+      FROM SPESTCNT
+      WHERE SPESTCNT.DEPT_ID  = '536.50' )
+AND  PCESTHMT.DEPT_ID =  '536.50'
+    AND SPESTCND.FINISHED_DATE >= to_date('29/09/2014','dd/mm/yyyy')
+    AND SPESTCND.FINISHED_DATE <=  to_date('02/10/2014','dd/mm/yyyy')
+AND  PCESTHMT.PROJECT_NO LIKE  '%SMC%'
+  ORDER BY PCESTHMT.PROJECT_NO ASC
+  
+select * from SPESTCNT where dept_id = '536.50'
+
+----T1 T2 T3 report SQL
+select b.application_No,b.application_Id, b.projectno, c.connected_Date
+from Spexpjob a, Spodrcrd c , Application_Reference b
+where a.acc_Created_Date >= to_date('01/09/2014','dd/mm/yyyy') 
+and a.acc_Created_Date <= to_date('30/09/2014','dd/mm/yyyy')
+and a.dept_Id ='457.20'
+and a.smc_Type ='N' 
+and a.project_No = c.project_no 
+and trim(a.project_No) = b.projectno 
+
+select PROJECTNO from application_reference where dept_id = '521.10'
+and PROJECTNO like '%CRJ%'
+order by PROJECTNO desc
+
+select * from pcesthmt where project_no = '521.10/CRJ/14/0299'
+
+update spratesm set contingency = 10
+
+select * from application_reference where length(application_No)=20
+ and length(trim(application_No))=18
+ and projectno like '%/11/%'
+ update application_reference set projectno = trim(projectno)
+ 
+ select * from spestlab where length(estimate_no)= 20
+ and length(trim(estimate_no))=18
+  
+ select * from spcstngm where dept_id = '512.20' and TARIFF_CAT_CODE = 'GP'
+ 
+ select * from Spcndctmh where dept_id = '512.20'
+ 
+ select * from application_reference where dept_id = '437.10'
+ and projectno like '%SMC/14%'
+ order by projectno desc
+ 
+ select * from pcesthmt where project_no = '437.10/SMC/14/0901'
+ select status from pcesthtt where estimate_no = '437.10/ENC/14/0941'
+ 
+ select * from report_smc r
+ select * from report_smc_category
+ 
+ select CATEGORY_NAME, REPORT_ID,  REPORT_NAME 
+ from report_smc r,report_smc_category c
+ where r.CATEGORY_ID = c.CATEGORY_ID
+ order by CATEGORY_NAME, REPORT_NAME
+ 
+ PIV/514.20/ANC/14/0230 normal	514.20/ENC/14/0143 		PIV/514.20/ENC/14/0108
+PIV/514.20/ANC/14/0231 samurdi	514.20/ENC/14/0144 <30000	PIV/514.20/ENC/14/0109
+PIV/514.20/ANC/14/0232 samurdi	514.20/ENC/14/0145 >30000	PIV/514.20/ENC/14/0110,PIV/514.20/ENC/14/0111
+PIV/514.20/ANC/14/0233 rhc	514.20/ENC/14/0147 >40000	PIV/514.20/ENC/14/0113,PIV/514.20/ENC/14/0114
+PIV/514.20/ANC/14/0234	rhc	514.20/ENC/14/0146 <40000	PIV/514.20/ENC/14/0112
+
+delete from ONLINE_PIV where REFERENCE_NO = '525.10/SMC/14/0922'
+
+SELECT  project_no, mat_nm, res_cd, ISSUED_QTY,(select CONTRACTOR_NAME from spestcnt where dept_id = '534.80' and contractor_id = '0009') as con_name
+  FROM
+       PCESTDMT JOIN PCESTHMT ON TRIM(PCESTDMT.ESTIMATE_NO) = TRIM(PCESTHMT.ESTIMATE_NO)
+    AND PCESTDMT.DEPT_ID = PCESTHMT.DEPT_ID JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD
+  WHERE PCESTHMT.PROJECT_NO IN ('534.80/MTN/14/0346' ) AND PCESTHMT.DEPT_ID =  '534.80'
+  ORDER BY MAT_CD, PROJECT_NO
+  
+  SELECT  *
+  FROM
+       PCESTDMT JOIN PCESTHMT ON TRIM(PCESTDMT.ESTIMATE_NO) = TRIM(PCESTHMT.ESTIMATE_NO)
+    AND PCESTDMT.DEPT_ID = PCESTHMT.DEPT_ID JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD
+  WHERE PCESTHMT.PROJECT_NO IN ('534.80/MTN/14/0346' ) AND PCESTHMT.DEPT_ID =  '534.80'
+  ORDER BY MAT_CD, PROJECT_NO
+  
+  
+  SELECT APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME,
+  BANK.BANK_NAME, BANK_BRANCH.BRANCH_NAME, PIV_DETAIL.PIV_NO,
+  PIV_DETAIL.REFERENCE_NO, PIV_DETAIL.PIV_RECEIPT_NO,
+  PIV_DETAIL.PIV_DATE, PIV_DETAIL.PIV_AMOUNT, PIV_DETAIL.PAID_DATE,
+  APPLICANT.STREET_ADDRESS, APPLICANT.SUBURB, APPLICANT.CITY,
+  PIV_DETAIL.SECURITY_DEPOSIT, PIV_DETAIL.CONFIRMED_DATE,
+  APPLICATION_REFERENCE.PROJECTNO
+  FROM
+       PIV_DETAIL JOIN APPLICANT ON PIV_DETAIL.ID_NO = APPLICANT.ID_NO JOIN BANK ON PIV_DETAIL.BANK_CODE = BANK.BANK_CODE JOIN BANK_BRANCH ON BANK.BANK_CODE = BANK_BRANCH.BANK_CODE
+    AND PIV_DETAIL.BRANCH_CODE = BANK_BRANCH.BRANCH_CODE LEFT OUTER JOIN APPLICATION_REFERENCE ON PIV_DETAIL.REFERENCE_NO = APPLICATION_REFERENCE.APPLICATION_NO
+  WHERE PIV_DETAIL.DEPT_ID IN ('424.20')
+
+
+
+  AND PIV_DETAIL.CONFIRMED_DATE >= to_date('01/11/2014','dd/mm/yyyy')
+    AND PIV_DETAIL.CONFIRMED_DATE <= to_date('30/11/2014','dd/mm/yyyy')
+    AND (PIV_DETAIL.STATUS = 'P' OR PIV_DETAIL.STATUS = 'C')
+    -- AND (PIV_DETAIL.PIV_NO LIKE '%ECR%' OR PIV_DETAIL.PIV_NO LIKE '%JCR%'  )
+     and application_no like '%/ECR/%'
+     ORDER BY  APPLICATION_REFERENCE.PROJECTNO ASC
+     
+     select * from APPLICATION_REFERENCE
+     
+     select distinct trx_type from intrhmt
+     
+    select * from splabrat where dept_id = '439.40' and labour_code = 'B71'
+    
+    SELECT * FROM SPEXPJOB WHERE PROJECT_NO = '455.20/SMC/14/1880'
+    
+    select status from intrhmt where dept_id = '536.50' and doc_pf = 'GRN' and doc_no = '536.50/GRN/14/0053'
+    
+    update intrhmt set status = 6  where dept_id = '536.50' and doc_pf = 'GRN' and doc_no = '536.50/GRN/14/0053'
+    
+    select * from cbpmthmt where 
+    chq_run='800.00/PPP/14/0653' and 
+    status = 7 and 
+    doc_no in ('800.00/PSA/14/0281',
+'800.00/PSA/14/0282',
+'800.00/PSA/14/0283',
+'860.00/PS1/14/0668',
+'860.00/PS1/14/0669')
+
+    update cbpmthmt set status=3,chq_run=null where chq_run='800.00/PPP/14/0653' and 
+    status = 7 and 
+    doc_no in ('800.00/PSA/14/0281',
+'800.00/PSA/14/0282',
+'800.00/PSA/14/0283',
+'860.00/PS1/14/0668',
+'860.00/PS1/14/0669')
+     
+select * from applications where application_no = '423.50/ECR/15/0010' 
+
+select customer_type from wiring_land_detail where application_id = '431.40/ANC/15/0047'
+
+select * from spestedy where reference_no = '536.20/ENC/14/3511'
+select * from application_reference where application_no = '536.20/ENC/14/3511'
+select * from applications where application_id = '536.20/ANC/14/3537'
+
+delete from spestedy where reference_no = '536.20/ENC/14/3511'
+update application_reference set application_no = ' ' where application_id = '536.20/ANC/14/3537'
+update applications set status = 'N' where application_id = '536.20/ANC/14/3537'
+
+select * FROM spstdesthmt where app_no = '440.00/BS/14/0083'
+
+select * from bank_branch where bank_code = '7010'
+
+-- application no generated
+select * from applications where status = 'C' where dept_id = '' and submit_date > fromdate and submit_date < todate
+select * from applications where application_id = '514.20/ANC/15/0231' 514.20/ENC/15/0231
+--service estimate created
+select * from SPESTEDY where status = 'V'
+
+select * from SPESTEDY where reference_no = '521.50/ENC/15/0072'
+
+select * from spestedy where reference_no = '461.20/ENC/15/0061'
+
+select * from spcrconv
+select * from spcstngm where dept_id = '527.30'
+
+select * from Spsecdeph where dept_id = '443.10'
+
+
+select b.application_No,b.application_Id, a.project_No,ACC_CREATED_DATE,
+(select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_Id
+and reference_type = 'APP' and status = 'C') as piv_1_date,
+c.APPROVED_DATE as approval_date,
+d.TOTAL_COST    as estimate_cost,
+(select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_No
+ and  reference_type = 'EST'
+and status = 'P' ) as  piv2_date,
+(select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No) as Engized_date ,
+(c.APPROVED_DATE - (select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_Id
+and reference_type = 'APP' and status = 'C') ) AS t1,
+((select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No) - c.APPROVED_DATE) AS t2_ln,
+((select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No) -(select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_No
+ and  reference_type = 'EST'
+and status = 'P')  ) AS t2_Smc,
+(ACC_CREATED_DATE - (select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No)) as T3,
+(select 'Loan'  from PIV_DETAIL where
+reference_no = b.application_No
+ and   reference_type = 'ELN'
+and status = 'C') as Loan ,
+(select dept_nm from gldeptm where dept_id =  $P{costCenter}) AS CCT_NAME
+from Spexpjob a,Application_Reference b  , approval c ,speststd  d
+WHERE TRIM(a.project_No) = TRIM(b.PROJECTNO)
+and a.ACC_CREATED_DATE >= $P{fromDate}
+and a.ACC_CREATED_DATE <= $P{toDate}
+and a.dept_Id =  $P{costCenter}
+and c.reference_no =b.application_No
+and d.estimate_no =b.application_No
+and d.TOTAL_COST = c.standard_cost
+and c.TO_STATUS = 30
+and a.project_No LIKE '%SMC%' ORDER BY a.project_No
+
+select * from spcstngm where dept_id = '413.10' and PHASE = 3  and CONNECTION_TYPE = 30 and TARIFF_CAT_CODE = 'GP'
+
+select * from splpsvcm where dept_id = '548.00'
+
+
+
+
+
+  select * from SPODRCRD
+  
+  select * from pcesthtt h, pcestdtt d
+  where h.dept_id = '423.50' 
+  and to_date('01/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  and to_date('28/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  and d.ESTIMATE_NO = h.ESTIMATE_NO
+  
+  select distinct dept_id from pcestdmt where FUND_QTY>0
+  
+  select project_no,d.RES_cd,m.mat_nm,d.UNIT_PRICE*ESTIMATE_QTY as totcost,d.UNIT_PRICE*FUND_QTY as cebcost
+  from pcesthmt h, pcestdmt d, inmatm m
+  where h.dept_id = '423.50' 
+  and to_date('01/03/2015','dd/mm/yyyy')< h.ETIMATE_DT 
+  and to_date('28/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  and d.ESTIMATE_NO = h.ESTIMATE_NO
+  and d.dept_id = h.dept_id
+  and d.ESTIMATE_NO like '%/ENC/%'
+  and m.mat_cd = d.res_cd
+
+select * from inmatm
+  group by project_no
+  
+  
+  select project_no , qry.RES_TYPE, qry.totcost, qry.cebcost
+  from  pcesthmt h, (select estimate_no, RES_TYPE, sum(UNIT_PRICE*FUND_QTY) as cebcost, sum(UNIT_PRICE*ESTIMATE_QTY) as totcost
+  from pcestdmt d
+  where d.ESTIMATE_NO like '%/ENC/%'
+  and d.dept_id = '526.30' 
+  group by estimate_no,RES_TYPE) qry
+  where h.estimate_no = qry.estimate_no
+  and to_date('01/03/2015','dd/mm/yyyy')< h.ETIMATE_DT 
+  and to_date('28/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  order by project_no
+  
+  order by estimate_no, RES_TYPE
+  
+  select * from spestlab where estimate_no like '536.20/ETC/16/0009%'
+  
+  update spestlab set estimate_no = trim(estimate_no) where estimate_no like '536.20/ETC/16/0009%'
+  
+  SELECT *  FROM PCESTDMT LEFT OUTER JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD
+  WHERE TRIM(PCESTDMT.ESTIMATE_NO) = TRIM( '455.20/ESA/15/0003')  and REV_NO = 1  and CUSTOMER_QTY > 0
+  ORDER BY  RES_CD
+  
+  SELECT PCESTDMT.ESTIMATE_NO, PCESTDMT.RES_CD, PCESTDMT.ESTIMATE_QTY,
+  PCESTDMT.ESTIMATE_COST, PCESTDMT.CUSTOMER_QTY,
+  PCESTDMT.DAMAGE_QTY, PCESTDMT.MNT_QTY, PCESTDMT.UNIT_PRICE,
+  (PCESTDMT.ESTIMATE_QTY - PCESTDMT.CUSTOMER_QTY) AS WITHOUTCUSTQTY,
+  PCESTDMT.REV_NO, PCESTDMT.DEPT_ID, PCESTDMT.RES_TYPE,
+  PCESTDMT.RES_CAT, PCESTDMT.GEN_RES, PCESTDMT.UOM,
+  PCESTDMT.TOLERANCE, PCESTDMT.ISSUED_QTY, PCESTDMT.COMMITED_QTY,
+  PCESTDMT.COMMITED_COST, PCESTDMT.ISSUED_COST,
+  PCESTDMT.NORM_DEFAULT, PCESTDMT.REQUESTED_QTY,
+  PCESTDMT.REQUESTED_COST, PCESTDMT.APPROVED_QTY,
+  PCESTDMT.APPROVED_COST, PCESTDMT.RETURNED_QTY,
+  PCESTDMT.RETURNED_COST, INMATM.COMP_ID, INMATM.DEPT_ID,
+  INMATM.MAT_CD, INMATM.MAT_NM, INMATM.CLS_CD,
+  INMATM.MAJ_UOM, INMATM.MIN_UOM, INMATM.CONV_FACT,
+  INMATM.PRIC_MTHD, INMATM.UNIT_PRICE, INMATM.MAT_IMP,
+  INMATM.ABC_CAT, INMATM.WEIGHT, INMATM.CONTROLLED,
+  INMATM.ORD_LT_UOM, INMATM.STATUS, INMATM.LOG_ID,
+  INMATM.ENT_BY, INMATM.ENT_DT, INMATM.MODI_BY,
+  INMATM.MODI_DT, INMATM.MOVEMENT, PCESTHMT.PROJECT_NO
+  FROM
+       PCESTDMT LEFT OUTER JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD JOIN PCESTHMT ON PCESTDMT.ESTIMATE_NO = PCESTHMT.ESTIMATE_NO
+  WHERE TRIM(PCESTDMT.ESTIMATE_NO) =  '455.20/ESA/15/0003'
+  ORDER BY INMATM.MAT_CD
+  
+  select * from inmatm
+  
+  select a.RES_CD, (select mat_nm from inmatm where mat_cd=a.RES_CD), a.estimate_qty, a.unit_price, a.estimate_cost
+FROM
+       PCESTDMT a where   TRIM(a.ESTIMATE_NO) =  '464.30/EMT/15/0006'
+order by a.RES_CD
+
+select h.estimate_no, project_no, status from pcesthmt h join   
+(select distinct ESTIMATE_NO from (select  ESTIMATE_NO, RES_CD,count(RES_CD) cnt 
+from PCESTDMT where length(trim(ESTIMATE_NO)) = 18 group by  ESTIMATE_NO, RES_CD) qry where cnt>1) q on
+h.estimate_no = q.estimate_no
+
+
+where 
+order by ESTIMATE_NO,RES_CD
+
+select * from pcestdmt where   TRIM(ESTIMATE_NO) =  '464.30/EMT/15/0006' and rev_no = 2 order by RES_CD
+delete from pcestdmt where   TRIM(ESTIMATE_NO) =  '464.30/EMT/15/0006' and rev_no = 2 
+
+
+SELECT APPLICATIONS.APPLICATION_NO, PCESTHMT.PROJECT_NO,
+  APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME, 
+  
+  WIRING_LAND_DETAIL.PHASE,
+  WIRING_LAND_DETAIL.CONNECTION_TYPE, WIRING_LAND_DETAIL.TARIFF_CAT_CODE,
+  WIRING_LAND_DETAIL.TARIFF_CODE, 
+   WIRING_LAND_DETAIL.SERVICE_STREET_ADDRESS,
+  WIRING_LAND_DETAIL.SERVICE_SUBURB, WIRING_LAND_DETAIL.SERVICE_CITY, PCESTHMT.std_cost,PCESTHMT.PRJ_ASS_DT
+  FROM
+       PCESTHMT JOIN APPLICATIONS ON TRIM(PCESTHMT.ESTIMATE_NO) = TRIM(APPLICATIONS.APPLICATION_NO) 
+       
+    JOIN APPLICANT ON APPLICATIONS.ID_NO = APPLICANT.ID_NO
+    JOIN WIRING_LAND_DETAIL ON APPLICATIONS.APPLICATION_ID = WIRING_LAND_DETAIL.APPLICATION_ID
+
+
+
+  WHERE APPLICATIONS.DEPT_ID =  '411.10'
+ 
+    AND PCESTHMT.PRJ_ASS_DT >=  to_date('01/04/2015','dd/mm/yyyy')
+    AND PCESTHMT.PRJ_ASS_DT<= to_date('30/04/2015','dd/mm/yyyy')
+AND PCESTHMT.PROJECT_NO LIKE '%SMC%'
+order by PCESTHMT.PROJECT_NO
+
+select * from applications
+select estimate_no,ETIMATE_DT,APPLICATION_TYPE  from pcesthtt p, applications a where ETIMATE_DT >=  to_date('01/04/2015','dd/mm/yyyy')
+and ETIMATE_DT <=  to_date('30/04/2015','dd/mm/yyyy')
+and trim(p.estimate_no) = trim(a.APPLICATION_NO)
+order by application_type
+
+select * from wiring_land_detail where SERVICE_STREET_ADDRESS like '%57/1%' order by SERVICE_CITY
+and (SERVICE_SUBURB like '%dehi%' or SERVICE_CITY like '%dehi%')
+ select * from pcesthtt where estimate_no like '%/ESA/15%'
+ 
+ insert into rep_roles_cct (roleid, costcentre,lvl_no) values ('niro', '462.20', 0)
+ 
+ select * from inmatm
+ 
+ update REPORT_SMC_PARA set SELECTED_LIST = '11000000000' where PARA_ID = 6 and REPORT_ID = 'R0004'
+update REPORT_SMC set REPORT_NAME = 'Application Register(With App. Fee)' where REPORT_ID = 'R0004'
+update REPORT_SMC_PARA set SELECTED_LIST = '11101111111' where PARA_ID = 6 and REPORT_ID = 'R0055'
+update REPORT_SMC set REPORT_NAME = 'Application Register' where REPORT_ID = 'R0055'
+
+up
+
+select * from gldeptin where DEPT_FULL_NAME like '%WATTALA%'
+
+select b.projectNo,a.CONSUMER_NAME,SERVICE_STREET_ADDRESS,SERVICE_SUBURB,SERVICE_CITY ,
+c.connected_Date, a.FINISHED_DATE 
+
+    from Spestcnd a,Application_Reference b , Spodrcrd c, APPLICATIONS d, wiring_land_detail w
+
+    WHERE TRIM(a.project_No) = b.projectNo
+
+    and b.projectNo = TRIM(c.project_No)
+
+    and b.application_no = d.application_no
+
+    and w.APPLICATION_ID = d.APPLICATION_ID
+
+   and c.connected_Date >= to_date('01/01/2015','dd/mm/yyyy')
+   and c.connected_Date <= to_date('28/09/2015','dd/mm/yyyy')
+
+and d.APPLICATION_TYPE in ('NC')
+
+and a.dept_Id = '548.20'
+
+and (a.is_exported ='N' or a.is_exported is null )
+
+and a.project_No LIKE '%SMC%'
+
+ORDER BY a.project_No
+
+select * from online_payment where ORDER_ID = '40581' order by PAYMENT_DATE  
+update online_payment set 
+REFERENCE_NO = '433.50/ENC/15/0936', 
+UPDATE_STATUS = 2,
+AUTH_CODE = '630068',
+AUTH_DATE = to_date('2015-10-15 11:00:32','yyyy-mm-dd HH24:mi:ss'),
+BANK_CODE = '7083',
+CARD_NO = 'XXXXXXXXXXXX1995'
+where ORDER_ID = '40581'
+
+
+select * from applicant where LAST_NAME like 'ARUNASHANTHI'
+
+select * from application_reference where ID_NO = '798140426v'
+
+select * from  piv_detail where reference_no='433.50/ENC/15/0936'
+
+select * from online_piv where reference_no='433.50/ENC/15/0936'
+update online_piv set status = 'P' where reference_no='433.50/ENC/15/0936'
+
+SELECT * FROM spcstngm WHERE DEPT_ID = '542.00' AND PHASE = 1 AND CONNECTION_TYPE = 30 AND TARIFF_CAT_CODE = 'DP'
+
+SELECT * FROM spsecdep WHERE DEPT_ID = '541.00' AND PHASE = 1 AND CONNECTION_TYPE = 30 AND TARIFF_CAT_CODE = 'DP'
+UPDATE spsecdep SET SECURITY_DEPOSIT = 1000 WHERE DEPT_ID = '541.20' AND PHASE = 1 AND CONNECTION_TYPE = 30 AND TARIFF_CAT_CODE = 'DP'
+
+select * from sauserm where JOB_TITLE like '%PUBLIC%'
+select * from sauserm where RPT_USER like '450.00%' and JOB_TITLE like '%ELECTRICAL ENGINEER%'
+select * from sauserm where RPT_USER like '450%'and JOB_TITLE like '%ACCOUNTANT%'
+
+select * from Approval_Subtype_Path where dept_id = '534.30'
+and APPROVAL_TYPE = 'EST' and APPLICATION_SUB_TYPE='NC'
+
+
+update Approval_Subtype_Path set SUB_TYPE_PATH='NC' where dept_id = '534.30'
+and APPROVAL_TYPE = 'EST' and APPLICATION_SUB_TYPE='MT'
+
+
+select * from spsecdep where DEPT_ID='515.20' and CONNECTION_TYPE=30 and PHASE=3
+select * from spsecdeph where DEPT_ID='515.20' and CONNECTION_TYPE=30 and PHASE=3 and year=2016
+
+
+select from aaaaa
+/*****************************************************************************/
+--  PCESTHTT 
+select * from pcesthtt where estimate_no = '431.60/ERE/15/0004'
+select STATUS from pcesthtt where estimate_no = '433.20/ERE/15/0004'
+select * from pcesthtt where dept_id like '547.10%' and status = 49
+--update pcesthtt set status = 22 where estimate_no = '437.10/ENC/14/0941'
+select * from pcesthtt where status = 46 and dept_id = '423.50'
+select project_no from pcesthtt where project_no like '446.20/TMP/12/%' order by project_no
+select * from pcesthtt where estimate_no = '422.30/ENC/13/1851'
+update pcesthtt set ESTIMATED_YEAR = 2013 where estimate_no = '557.20/ENC/13/0242'
+update pcesthtt set CAT_CD = 'MTN' where estimate_no = '526.20/EMT/15/0002'
+update pcesthtt set STATUS = 48 where estimate_no = '431.50/ECR/15/0324'
+select * from pcesthtt where dept_id like '455%'
+--PCESTDTT
+select * from pcestdtt where estimate_no = '443.20/ECR/15/0058' and RES_CD='K1243'
+and res_cd = 'OVERHEAD'
+update pcestdtt set CUSTOMER_QTY = 36.12 where estimate_no = '514.40/ECR/13/0196'
+and res_cd = 'OVERHEAD'
+
+select * from pcesthtt where status = 44 and ESTIMATE_NO like '%/ENC/14/%' 
+order by ESTIMATE_NO
+and dept_id = '541.00'
+select * from pcestdtt where cus_qty is null
+select * from pcestdtt where estimate_no = '452.40/EMT/15/0002' and RES_CD = 'LABOUR'
+update  pcestdtt set UNIT_PRICE = 300, ESTIMATE_QTY = 2689.75,ESTIMATE_COST = 806925 where estimate_no = '452.40/EMT/15/0002' and RES_CD = 'LABOUR'
+--insert into pcestdtt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('452.40/EMT/15/0002',1,'452.40','OVERHEAD','OVERHEAD-COST',2,'HRS.',232,2689.75,624022);
+ --insert into pcestdtt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('452.40/EMT/15/0002',1,'452.40','TRANSPORT','TRANSPORT-COST',2,'NO.',1,450,450);
+ --insert into pcestdtt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('452.40/EMT/15/0002',1,'452.40','LABOUR','LABOUR-COST',2,'HRS.',292,2689.75,785407);
+ 
+/*****************************************************************************/
+--  PCESTHMT 
+select * from pcesthmt where project_no = '443.20/MTN/15/0190' 
+and dept_id like '423.50%'
+select STD_COST from pcesthmt where estimate_no = '517.50/ECR/15/0132'
+select status from pcesthmt where estimate_no = '525.30/ENC/14/1490'
+
+select * from pcesthmt where estimate_no like '%ESA%' and dept_id = '411.10'
+
+select status from pcesthmt where estimate_no = '525.30/ENC/14/1490'
+select * from pcesthmt where dept_id like '547.10%' and status = 59
+--UPDATE  pcesthmt set LB_RATE_YEAR = 2014 where estimate_no = '446.20/SMC/12/0269'
+update pcesthmt set LB_RATE_YEAR = 2014 where estimate_no = '536.50/ENC/14/0187'
+update pcesthmt set STATUS = 57 where estimate_no = '525.30/ENC/14/1490'
+update pcesthmt set std_cost = 10140 where estimate_no = '441.40/ENC/14/0954'
+
+select status from pcesthmt where project_no = '536.10/SMC/13/0410'
+--update pcesthmt set status = 1 where project_no = '542.20/SMC/13/0362'
+update pcesthmt set std_cost = 29718.50 where estimate_no = '413.10/ENC/15/0098'
+update pcesthmt set std_cost = 41,793.40 where project_no = '443.50/SMC/15/0143'
+select * from pcesthmt where dept_id like '423.50%'
+--update pcesthmt set std_cost = 63148 where estimate_no = '542.00/ECR/12/0140'
+
+-- PCESTDMT
+select REV_NO,RES_CD,UNIT_PRICE,ESTIMATE_QTY,ESTIMATE_COST,ISSUED_QTY
+from pcestdmt where estimate_no = '445.20/ECR/15/0158' 
+--and REV_NO = 1 
+order by RES_CD
+delete from pcestdmt where estimate_no = '542.00/EMT/15/0008' and REV_NO = 2
+
+select * from pcestdmt where estimate_no = '413.10/ENC/15/0098' and RES_CD = 'OVERHEAD'
+select * from pcestdmt where estimate_no = '542.00/EMT/15/0008'
+and RES_CD != 'LABOUR' and RES_CD != 'OVERHEAD' and RES_CD != 'TRANSPORT'
+--delete from pcestdmt where estimate_no = '514.10/ECR/12/0197' and RES_CD != 'LABOUR' and RES_CD != 'OVERHEAD' and RES_CD != 'TRANSPORT'
+select * from pcestdmt where estimate_no = '443.10/ESA/13/0016'
+and res_cd = 'OVERHEAD'
+update pcestdmt set ESTIMATE_QTY = 6,ESTIMATE_COST = 1224where estimate_no = '445.20/ENC/13/0525'and res_cd = 'OVERHEAD'
+update pcestdmt set --estimate_qty=188.2,estimate_cost =38392.8, 
+--customer_qty = 181.2,
+ESTIMATE_QTY = 38.6
+,ESTIMATE_COST = 7874.4
+where estimate_no = '457.10/EMT/13/0030'
+and res_cd = 'OVERHEAD'
+--update pcestdmt set estimate_cost = 105.75 where dept_id = '453.20' 
+--and estimate_no = '453.20/EMT/13/0004' and res_cd = 'D0610'
+delete from pcestdmt where estimate_no = '431.50/EMT/15/0566' and REV_NO = 2
+
+select * from pcestdmt where estimate_no = '424.20/ENC/15/1184'and RES_CD = 'LABOUR'
+--insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('424.20/ENC/15/1184',6,'424.20','OVERHEAD','OVERHEAD-COST',2,'HRS.',256,0,0)
+ --insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('424.20/ENC/15/1184',6,'424.20','TRANSPORT','TRANSPORT-COST',2,'NO.',1,450,450)
+ --insert into pcestdmt (ESTIMATE_NO, REV_NO, DEPT_ID, RES_CD, RES_TYPE, RES_CAT, UOM, UNIT_PRICE, ESTIMATE_QTY, ESTIMATE_COST)
+ values ('424.20/ENC/15/1184',6,'424.20','LABOUR','LABOUR-COST',2,'HRS.',230,0,0)
+ delete from pcestdmt where ESTIMATE_NO = '424.20/ENC/15/1184' and RES_CD = 'OVERHEAD'
+ 
+/*************************************************************************************/
+------ SPESTLAB ---------------
+select * from spestlab where estimate_no like '445.20/ECR/15/0158'
+and dept_id = '547.20'
+delete from spestlab where estimate_no = '547.00/ECR/14/0219' and dept_id = '547.20'
+update spestlab set ITEM_QTY =0.026 , LABOUR_COST = 935.22 where estimate_no like '445.20/ECR/15/0158' and LABOUR_CODE = 'RA12.6'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 87 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA16.1'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 436 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA2.1'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 872 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA3.1'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 2398 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA8.4'
+update spestlab set ITEM_QTY =1 , LABOUR_COST = 981 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'RA9.1'
+update spestlab set ITEM_QTY =12 , LABOUR_COST = 564 where estimate_no like '445.20/ERE/15/0001' and LABOUR_CODE = 'SM1.4'
+
+
+ select * from spestlab where estimate_no = '541.00/ECR/14/0285'
+ 
+  
+ select * from pcestdmt where estimate_no = '542.00/ENC/13/1056' and RES_CD = 'L71402'
+ update pcestdmt set UNIT_PRICE = 197.4, ESTIMATE_COST = 1184.4 where estimate_no = '542.00/ENC/13/1056' and RES_CD = 'L71402'
+ 
+ 
+ select LABOUR_CODE, ACTIVITY_DESCRIPTION, UNIT_PRICE, ITEM_QTY, LABOUR_COST
+ from spestlab where estimate_no like '513.30/ECR/14/0357'
+/*****************************************************************************/
+--  WIRING DETAIL / WIRING_LAND_DETAIL
+select * from WIRING_LAND_DETAIL where application_id = '457.10/ACR/13/0456'
+select * from WIRING_LAND_DETAIL where NEIGHBOURS_ACC_NO like '4194396%'
+update WIRING_LAND_DETAIL set 
+--connection_type = 15 
+--tariff_cat_code = 'GP'
+--,tariff_code = 31
+--PHASE = 3
+CONNECTION_TYPE = 60
+where application_id = '542.00/ANC/13/0749'
+
+NEIGHBOURS_ACC_NO 
+select * from WIRING_LAND_DETAIL where EXISTING_ACC_NO='4114239502'
+/******************************************************************************/
+---------------USER LEVELS AND LIMITS / SAUSERM --------
+SELECT * FROM SAUSERM WHERE USER_ID like '%SMCR2%'
+USER_ID like '%wps%'
+USER_ID like '%BCL%'
+USER_LEVEL = 'ITOA'
+JOB_TITLE = 'TECHNOLOGIST  ASSISTANT'
+ 
+SELECT * FROM SAUSERM WHERE USER_LEVEL = 'ES' AND USER_ID like '%SMCR2%'
+SELECT * FROM SAUSERM WHERE RPT_USER = '451.10'
+UPDATE SAUSERM SET USER_LEVEL = 'EA'
+--,RPT_USER='514.00' 
+WHERE  USER_ID ='SMCR2'
+
+select * from appestlim where dept_id like '%534%' 
+and APPLICATION_TYPE = 'NC'
+and approval_type = 'EST'
+order by APPLICATION_TYPE, LIMIT_FROM
+--and user_level = 'CE'
+
+order by status_from
+update appestlim set limit_from = 250000,status_to=58 where dept_id = '542.00' and user_level = 'CE' and approval_type = 'JOB'
+insert into appestlim (dept_id,application_type,user_level,limit_from,limit_to,
+status_from,status_to,upd_user,upd_date,upd_time,approval_type) values
+('542.00','NC','EE',50000,250000,57,61,'IMPORT',to_date('15/02/2013','dd/mm/yyyy'),'09.30','JOB')
+insert into
+
+-------------------------------------------------------------------------
+--DELETING SERVICE ESTIMATE---
+DELETE FROM SPSEREST WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETPOL WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETSTU WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETSTY WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+DELETE FROM SPSETWIR WHERE APPLICATION_NO = '456.10/ENC/14/0036'
+UPDATE SPESTEDY SET STATUS = 'A' WHERE REFERENCE_NO = '423.50/ENC/13/0038' 
+
+/**********************************************************************************/
+---------- SERVICE ESTIMATE / SPESEREST ------------------------
+
+select * from SPSEREST where APPLICATION_NO = '434.20/EAM/15/0003'
+select * from SPSETWIR where APPLICATION_NO = '512.20/ENC/13/0265'
+select IS_SERVICE_CONVERSION from SPSEREST where APPLICATION_NO = '548.00/ENC/14/0887'
+update SPSETWIR set TOTAL_LENGTH = 0 where APPLICATION_NO = '437.40/ECR/15/0046'
+update SPSEREST set TOTAL_LENGTH = 0 where APPLICATION_NO = '437.40/ECR/15/0046'
+select IS_SERVICE_CONVERSION from speststd  
+select IS_STANDARD_VC from SPSEREST where application_no = '512.20/ENC/13/0265'
+UPDATE SPSEREST SET DISTANCE_FROM_SS = 345 WHERE application_no = '551.60/ENC/14/0452' 
+UPDATE SPSEREST SET 
+--IS_STANDARD_VC = 'Y' 
+TOTAL_LENGTH = 0
+WHERE application_no = '434.20/EAM/15/0003' 
+
+/**********************************************************************************/
+---------- SPESTSTD ------------------------
+select * from speststd where estimate_no = '443.20/MTN/15/0190'
+select * from speststd where estimate_no = '542.00/ECR/14/0244'
+select * from speststdh where REV_NO != 1 and REV_NO != 2
+/*
+--update speststd set 
+fixed_cost = 20000
+--variable_cost=235200
+--other_cost=18332
+--labour_cost = 0
+--OTHER_LABOUR_COST = 18276.72
+--,overhead_cost = 0
+--,contingency_cost = 0
+--security_deposit = 1000
+,total_cost = 21000
+--,transport_cost = 0
+--,NBT_AMOUNT = 0
+--,NBT_PRESENT = 0
+--,addl_deposit = -20000
+--,tax_amount = 42550.08
+--conversion_cost = 560418
+--CABLE_TYPE = '162C'
+--conversion_cost = 455880
+--CONVERSION_LENGTH_2P = 0
+--,estimated_year = 2013
+--LINE_LENGTH = 48
+--IS_STANDARD_VC = 'N'
+--SERVICE_DISTANCE = ,
+--SIN_NO
+ where estimate_no = '424.20/ENC/15/1184'
+ 
+ 
+ */
+select count(*) from speststdh where estimate_no = '433.10/ECR/14/0224'
+delete from speststdh where estimate_no = '433.10/ECR/14/0224'
+update speststdh set TOTAL_COST = 66045 where estimate_no = '534.10/ENC/14/0438'
+
+select CONTINGENCY_PRESENT, count(CONTINGENCY_PRESENT) as jobno from speststd where CONTINGENCY_PRESENT >0
+--and dept_id = '558.30'
+group by CONTINGENCY_PRESENT
+order by jobno
+
+select * from speststd where CONTINGENCY_PRESENT = 50
+UPDATE speststd SET IS_STANDARD_VC = 'Y' WHERE estimate_no = '512.20/ENC/13/0265' 
+/**********************************************************************************/
+---------- SPESTSTDH ------------------------
+select * from speststdh where estimate_no = '471.10/ENC/14/0901'
+delete from speststdh where estimate_no = '471.10/ENC/14/0901' and REV_NO = 6 and dept_id = '471.10'
+
+/**********************************************************************************/
+---------- SPESTLAB ------------------------
+select * from spestlab where estimate_no = '541.00/ECR/14/0285'
+select * from pcestdtt where estimate_no = '541.00/ECR/14/0146'
+update spestlab set dept_id = '541.20' where estimate_no = '541.00/ECR/14/0146'
+
+/*************************************************************************/
+---- PIV DETAIL ----------
+
+select * from piv_detail where piv_no = 'PIV/445.30/ENC/15/0323'
+select * from piv_detail where reference_no = '525.30/SMC/15/0128' 
+update piv_detail set 
+--PAYMENT_MODE = 'Q'
+--paid_DATE = to_date('18/06/2014','dd/mm/yyyy')
+--,CHEQUE_DATE = to_date('25/06/2013','dd/mm/yyyy')
+--,CHEQUE_BANK_CODE = '7135'
+--,CHEQUE_BRANCH_CODE = '241'
+--,CHEQUE_NO = '208791'*/
+--SER_CONN_OR_ELEC_SCH = 0, 
+--MISCELLANEOUS_INCOME = 4361.5,
+--SUB_TOTAL = 4361.5
+--REFERENCE_TYPE = 'EST'
+--PIV_SEQ_NO = 2
+--PIV_AMOUNT = 250
+--,SER_CONN_OR_ELEC_SCH = 55551.00
+--, grand_total = 250
+status = 'D'
+--reference_type = 'ELN'
+where piv_no = 'PIV/541.20/JNC/15/0002'
+
+select * from spcstngm where DEPT_ID= '541.20' where 
+
+/******************************************************************************/
+---------------REPORTS --------
+select * from REPORT_SMC where REPORT_ID = 'R0053'
+update REPORT_SMC set IS_ACTIVE = 0 where REPORT_ID = 'R0001' 
+select * from REPORT_SMC_PARA where REPORT_ID = 'R0054'
+select * from REPORT_SMC_CATEGORY
+
+update REPORT_SMC_PARA set SELECTED_LIST = '11111111111' where PARA_ID = 6 and REPORT_ID = 'R0019B'
+
+update REPORT_SMC set ORDER_SQ = '00' where REPORT_ID = 'R0005';
+update REPORT_SMC set ORDER_SQ = '02' where REPORT_ID = 'R0009';
+update REPORT_SMC set ORDER_SQ = '04' where REPORT_ID = 'R0010';
+update REPORT_SMC set ORDER_SQ = '06' where REPORT_ID = 'R0007';
+update REPORT_SMC set ORDER_SQ = '08' where REPORT_ID = 'R0008';
+update REPORT_SMC set ORDER_SQ = '10' where REPORT_ID = 'R0037';
+update REPORT_SMC set ORDER_SQ = '12' where REPORT_ID = 'R0015';
+update REPORT_SMC set ORDER_SQ = '14' where REPORT_ID = 'R0019A';
+update REPORT_SMC set ORDER_SQ = '16' where REPORT_ID = 'R0019B';
+update REPORT_SMC set ORDER_SQ = '18' where REPORT_ID = 'R0060';
+update REPORT_SMC set ORDER_SQ = '20' where REPORT_ID = 'R0048';
+update REPORT_SMC set ORDER_SQ = '22' where REPORT_ID = 'R0047';
+update REPORT_SMC set ORDER_SQ = '24' where REPORT_ID = 'R0019';
+update REPORT_SMC set ORDER_SQ = '26' where REPORT_ID = 'R0054';
+update REPORT_SMC set ORDER_SQ = '28' where REPORT_ID = 'R0028';
+update REPORT_SMC set ORDER_SQ = '30' where REPORT_ID = 'R0029';
+update REPORT_SMC set ORDER_SQ = '32' where REPORT_ID = 'R0059';
+update REPORT_SMC set ORDER_SQ = '34' where REPORT_ID = 'R0063';
+
+select * from REPORT_SMC_PARA where REPORT_ID = 'R0004' and PARA_ID = 6
+select * from REPORT_SMC where category_id = '3' order by ORDER_SQ
+insert into REPORT_SMC 
+(REPORT_ID, REPORT_NAME,     CATEGORY_ID, IS_ACTIVE, ORDER_SQ)
+values ('R0053', 'PIV Issued Report', 2, 1, 2);
+insert into REPORT_SMC_PARA (PARA_ID, REPORT_ID, SELECTED_LIST)
+values (1,'R0053',null);
+insert into REPORT_SMC_PARA (PARA_ID, REPORT_ID, SELECTED_LIST)
+values (2,'R0053',null);
+insert into REPORT_SMC_PARA (PARA_ID, REPORT_ID, SELECTED_LIST)
+values (3,'R0053',null);
+update REPORT_SMC set ORDER_SQ = 12 where REPORT_ID = 'R0054';
+update REPORT_SMC set REPORT_NAME = 'Finished Jobs - SIN number wise' where REPORT_ID = 'R0048';
+/******************************************************************************/
+
+select * from splpsvcm where dept_id = '548.00'
+
+select * from piv_detail where piv_no = 'PIV/444.40/ANC/14/0743'
+delete piv_detail where piv_no = 'PIV/472.20/ANC/14/0794'
+update piv_detail set PAID_DATE= to_date('27/03/2014','dd/mm/yyyy')
+where piv_no = 'PIV/551.30/ANC/14/0212'
+
+select * from piv_detail where reference_no = '557.30/TMP/14/0002'
+select * from PIV_DETAIL where PAYMENT_MODE = 'Q'
+select * from piv_detail where reference_type = 'ELN' and PAID_DATE is null
+select * from piv_detail where BANK_PAID_DATE is not null
+select * from piv_detail where dept_id = '439.20' and REFERENCE_TYPE = 'APP' and piv_no like '%/14/%' order by PIV_NO desc
+
+insert into piv_detail 
+(PIV_NO, PIV_SEQ_NO, DEPT_ID, PIV_RECEIPT_NO, REFERENCE_TYPE, REFERENCE_NO, APP_REFERENCE_NO, ID_NO,  PIV_DATE,   PIV_AMOUNT, 
+CEB_BRANCH_NAME, BANK_CODE, BRANCH_CODE, PAYMENT_MODE, PAID_DATE, MISCELLANEOUS_INCOME, ELECTRICITY_DEBTORS, SECURITY_DEPOSIT, 
+SER_CONN_OR_ELEC_SCH, TENDER_DEPOSIT, MISCELLANEOUS_DEPOSIT, CASH_IN_TRANSIT, FOR_DISHONORED_CHEQUE, SUB_TOTAL, VAT, GRAND_TOTAL, 
+PREPARED_BY,   CONFIRMED_DATE, CONFIRMED_TIME, STATUS,  ADD_DATE,   ADD_TIME,          DESCRIPTION,            PROCESSING_FEE
+ ) values
+ ('PIV/439.20/ANC/14/0715', 1, '439.20', 'CP1024841', 'APP', '439.20/ANC/14/0715', '439.20/ANC/14/0715', '872012478v', to_date('25/11/2014','dd/mm/yyyy'), 250,  
+ 'THULHIRIYA CONSUMER SERVICE CENTRE', '7135', '270', 'C', to_date('25/11/2014','dd/mm/yyyy'), 250, 0, 0,
+ 0, 0, 0, 0, 0, 250, 0, 250,
+ '43920DEO1', to_date('25/11/2014','dd/mm/yyyy'), '11.00', 'C', to_date('25/11/2014','dd/mm/yyyy'), '10.00', 'APPLICATION FEE', 250)
+ 
+/*************************************************************************/
+---- APPLICATIONS ----------
+select * from applications where APPLICATION_NO = '433.20/ERE/15/0014'
+select distinct application_sub_type from applications where application_id = '522.60/ANC/14/0520'
+update applications set application_sub_type='FF'  where application_id = '522.60/ANC/14/0554'
+update  applications set 
+status = 'D' 
+--APPLICATION_TYPE = 'CR' 
+--APPLICATION_SUB_TYPE = ''
+where application_id = '523.70/ANC/14/1127'
+select * from piv_detail where  
+piv_no like 'PIV/423.20/ANC/13/0658' 
+SPESTEDY
+select * from SPESTEDY where REFERENCE_NO = '461.20/ENC/15/0061'
+delete from SPESTEDY where appointment_id = '2015/02/200' and dept_id = '461.20'
+update  applications set APPLICATION_NO = '' where application_id = '431.50/ANC/13/0612'
+SELECT ID_NO FROM APPLICANT WHERE (ID_NO like '7%v' or ID_NO like '8%v'
+or ID_NO like '9%v') and (ID_NO not like '%00%')
+
+SELECT * FROM APPLICANT where TELEPHONE_NO = '0714118431'
+UPDATE APPLICANT SET STR
+EET_ADDRESS = 'CEYLON ELECTRICITY BOARD' WHERE ID_NO = '000000000x'
+
+select * from application_reference where APPLICATION_NO = '424.20/ENC/14/0092'
+update application_reference set APPLICATION_NO = ' ' where application_id = '431.50/ANC/13/0612'
+update application_reference set ID_NO = 'pv9478' where projectno = '542.20/SMC/13/0271'
+
+select * from applications where APPLICATION_NO = '526.20/EMT/15/0002'
+4114239502
+select * from application_reference where dept_id = '514.20' and projectno like '%/SMC/%' and projectno is not null order by projectno desc 
+/*************************************************************************/
+-- ALLOCATE/ DEALLOCATE /  CONTRACTOR -------------
+select * from spestcnt where dept_id = '512.20'
+
+select * from spestcnd where PROJECT_NO like '%511.20/CRJ/15/0004%' and status = 'F'
+select * from spestcnd where dept_id = '511.30' and PROJECT_NO = '441.20/MTN/13/0087'
+update spestcnd set 
+--FINISHED_DATE = to_date('25/11/2013','dd/mm/yyyy'), 
+--status = 'F' 
+CONTRACTOR_ID = '0003'
+where dept_id = '512.20' and PROJECT_NO = '512.20/MTN/14/0111'
+select status from pcesthmt where project_no = '441.20/SMC/11/3106'
+update spestcnt set status = 0, CONTRACTOR_NAME = '', CONTRACTOR_ADDRESS=''  where dept_id = '431.50' and CONTRACTOR_ID = '0006'
+
+select CONTRACTOR_NAME from spestcnt where dept_id = '534.80' and contractor_id = '0009'
+/*************************************************************************/
+--DELETING A JOB
+select status from pcesthmt  where  estimate_no='514.20/ENC/15/0028'
+select * from pcesthtt  where  estimate_no='514.20/ENC/15/0028'
+delete from pcesthmt where  estimate_no='514.20/ENC/15/0028' and status=22;
+delete from pcestdmt where  estimate_no='514.20/ENC/15/0028';
+update APPLICATION_REFERENCE set projectno=null where  application_no='514.20/ENC/15/0028';
+delete from pcprjbal where  estimate_no='514.20/ENC/15/0028';
+delete from pcesthtt where  estimate_no='514.20/ENC/15/0028' and rev_no = 3;
+delete from pcestdtt where  estimate_no='514.20/ENC/15/0028' and rev_no = 3;
+update pcesthtt set status=33 where  estimate_no='514.20/ENC/15/0028';
+
+/*************************************************************************/
+--CANECEL ESTIMATE NO/APPLICATION NO AND APP FEE
+delete piv_detail where piv_no = 'PIV/423.20/ANC/14/0925'
+update application_reference set APPLICATION_NO = ' ' where application_id = '431.50/ANC/13/0612'
+update  applications set APPLICATION_NO = '', set status = 'N' where application_id = '431.50/ANC/13/0612'
+
+/*************************************************************************/
+--MOVE APPLICATION FROM ONE DEPOT TO ANOTHER (434.30-->434.20)
+SELECT * FROM APPLICATIONS WHERE APPLICATION_ID = '434.30/ANC/13/0259'
+INSERT INTO APPLICATIONS 
+(APPLICATION_ID, DEPT_ID, APPLICATION_NO, APPLICATION_TYPE, APPLICATION_SUB_TYPE, SUBMIT_DATE, ID_NO, PREPARED_BY, CONFIRMED_BY, CONFIRMED_DATE, CONFIRMED_TIME, ALLOCATED_TO, ALLOCATED_BY, ALLOCATED_DATE, ALLOCATED_TIME, STATUS, ADD_USER,  ADD_DATE, ADD_TIME, UPD_USER, UPD_DATE, UPD_TIME, DESCRIPTION, FROM_DATE, TO_DATE, DURATION_IN_DAYS, DURATION_TYPE, DURATION, DISCONNECTED_WITHIN, FINALIZED_WITHIN, IS_LOAN_APP, IS_VISITNG_NEEDED, SAMURDHI_MEMBER)
+VALUES
+('434.30/ANC/13/0259', '434.20',  NULL, 'NC','PM', to_date('07/05/2013','dd/mm/yyyy'),  '653342772v', '43430DEO1',   '43430DEO1',    to_date('07/05/2013','dd/mm/yyyy') ,    '09:55:47 AM',    NULL,         NULL ,        NULL,           NULL,           'A',      '43430DEO1', to_date('07/05/2013','dd/mm/yyyy') ,'09:43:40 AM', NULL,     NULL ,    NULL,     NULL,        NULL,      NULL,                NULL, NULL,              NULL ,               NULL,             NULL, 'N',           NULL  ,            'N')
+UPDATE WIRING_LAND_DETAIL SET DEPT_ID = '434.20' WHERE APPLICATION_ID = '434.30/ANC/13/0259' AND DEPT_ID = '434.30'
+DELETE FROM APPLICATIONS WHERE APPLICATION_ID = '434.30/ANC/13/0259' AND DEPT_ID = '434.30'
+update  applications set APPLICATION_NO = NULL, status = 'P' where application_id = '434.30/ANC/13/0259'
+DELETE FROM application_reference where application_id = '434.30/ANC/13/0259'
+
+/*************************************************************************/
+--JOB FINISH
+select * from SPESTCND where PROJECT_NO = '443.20/LSF/13/0004'
+update  SPESTCND set status = 'F', FINISHED_USER = 'SMCR2', FINISHED_DATE = to_date('06/06/2013','dd/mm/yyyy'),  FINISHED_TIME = '10:00 AM' where PROJECT_NO = '443.20/MTN/13/0219'
+
+
+/********************************************************************************/
+-- Export to billing
+
+select * from spexpjob where project_no = '521.20/SMC/14/0596'
+export time 11.18 am
+
+select * from spodrcrd where project_no = '521.20/SMC/14/0596'
+
+
+
+/********************************************************************************/
+--------------------- BANK / BRANCH ----------------------
+
+select * from bank 
+--where bank_code = '7080'
+order by BANK_NAME
+insert into bank (bank_code,bank_name) values ('7080','NSB')
+
+select * from bank_branch where BANK_CODE LIKE '7135%' ORDER BY BRANCH_NAME
+insert into bank_branch
+(BRANCH_CODE, BANK_CODE, BRANCH_NAME, BRANCH_ADDRESS)
+values
+('02','7135','MATALE','MATALE')
+
+SELECT * FROM bank_branch WHERE BANK_CODE LIKE '2%'ORDER BY BRANCH_NAME 
+SELECT * FROM BANK
+  
+/********************************************************************************/
+--------------------- APPOINTMENT ----------------------
+
+select * from SPESTEDY where reference_no = '536.20/ENC/14/3170' and APPOINTMENT_ID = '2014/11/101'
+
+delete from SPESTEDY where reference_no = '536.20/ENC/14/3170' and APPOINTMENT_ID = '2014/11/101'
+
+/********************************************************************************/
+--------------------- APPROVAL ----------------------
+
+select * from approval where REFERENCE_NO = '521.20/SMC/13/0371'
+select * from approval where APPROVAL_TYPE LIKE '%RJ%'
+ SELECT APPLICATIONS.APPLICATION_NO, GLDEPTIN.DEPT_FULL_NAME
+  FROM
+       APPLICATIONS JOIN GLDEPTIN ON APPLICATIONS.DEPT_ID = GLDEPTIN.DEPT_ID
+       where trim(APPLICATIONS.APPLICATION_NO) =  TRIM('456.10/ESA/13/0001')
+   
+
+  
+  /********************************************************************************/
+--------------------- MATERIALS ----------------------
+ select * from inwrhmtm where DEPT_ID like '441.%' and MAT_CD = 'A0430'
+ select * from inmatm where  MAT_CD = 'A0430'
+ select * from inwrhmap where  DEPT_ID like '441.%'
+
+ select * from SPCNDMAT where  PHASE = 3 and CONNECTION_TYPE = 60
+ insert into SPCNDMAT (PHASE, CONNECTION_TYPE, WIRING_TYPE, CONDUCTOR_TYPE, MAT_CD, MEASUREMENT_FACTOR, DEPT_ID)
+ values (3 , 60, 'OH','FLY',           'D0110',                             0.702, '557.20')
+
+-- line breaks
+select description from spestedy_cons where description like '%'||chr(10)||'%'
+
+select * from cbpmthtt where dept_id = '260.20' order by doc_no desc
+
+select b.projectNo,a.CONSUMER_NAME,SERVICE_STREET_ADDRESS,SERVICE_SUBURB,SERVICE_CITY ,c.connected_Date, a.FINISHED_DATE  
+from Spestcnd a,Application_Reference b , Spodrcrd c, APPLICATIONS d, wiring_land_detail w
+WHERE TRIM(a.project_No) = b.projectNo
+and b.projectNo = TRIM(c.project_No) 
+and b.application_no = d.application_no
+and w.APPLICATION_ID = d.APPLICATION_ID
+and c.connected_Date <= to_date('2014-07-07','yyyy-mm-dd')
+and d.APPLICATION_TYPE in ('NC')
+and a.dept_Id like '534.30'
+and (a.is_exported ='N' or a.is_exported is null )
+and a.project_No LIKE '%SMC%' 
+ORDER BY a.project_No
+ 
+select b.projectNo,a.CONSUMER_NAME,SERVICE_STREET_ADDRESS,SERVICE_SUBURB,SERVICE_CITY ,c.connected_Date, a.FINISHED_DATE ,(select dept_nm from gldeptm where dept_id =  $P!{@costctr}) AS CCT_NAME
+from Spestcnd a,Application_Reference b , Spodrcrd c, APPLICATIONS d, wiring_land_detail w
+WHERE TRIM(a.project_No) = b.projectNo
+and b.projectNo = TRIM(c.project_No)
+and b.application_no = d.application_no
+and w.APPLICATION_ID = d.APPLICATION_ID
+and c.connected_Date <= to_date('2014-07-07','yyyy-mm-dd')
+and d.APPLICATION_TYPE in ('NC')
+and a.dept_Id = '534.30'
+and (a.is_exported ='N' or a.is_exported is null )
+and a.project_No LIKE '%SMC%'
+ORDER BY a.project_No
+
+
+/********************************************************************************/
+--------------------- LABOUR RATES / SPLABRAT ----------------------
+select * from splabrat where dept_id = '430.00' and year ='2016' and LABOUR_CODE = 'RB2.5'
+select * from splabrat where LABOUR_CODE = 'SM5.5'
+
+delete from splabrat where dept_id = '430.00' and year ='2016' and LABOUR_CODE = 'RB2.5'
+
+update splabrat set year = '2013' where dept_id = '435.60' and year ='2014'
+
+/********************************************************************************/
+--------------------- REPORTS ----------------------
+select * from report_smc
+select para_id from report_smc_para where report_id = 'R0039'
+select distinct para_id from report_smc_para order by para_id
+select * from report_smc_para where para_id = 10
+select * from report_smc_category
+
+/********************************************************************************/
+--------------------- SPRATESM / rates ----------------------
+select * from spratesm where dept_id = '541.40'
+
+/********************************************************************************/
+--------------------- REPORTS ----------------------
+select * from report_smc where REPORT_ID = 'R0058'
+update report_smc set REPORT_NAME = 'Application Status (New Connection)' where REPORT_ID = 'R0058'
+
+
+/********************************************************************************/
+/**** APPLICATIONS *********/
+select * from applications where APPLICATION_ID = '525.20/ANC/16/0011'
+
+/********************************************************************************/
+select * from Spreconn
+
+
+select * from cbpmthmt where dept_id = '521.00' and doc_no in (
+'521.00/PSO/14/1162'
+         ,'521.00/PSO/14/1163'
+         ,'521.00/PSO/14/1164'
+         ,'521.00/PSO/14/1165'
+         ,'521.00/PSO/14/1166'
+         ,'521.00/PSO/14/1167'
+         ,'521.00/PSO/14/1168'
+         ,'521.00/PSO/14/1169'
+         ,'521.00/PSO/14/1170'
+         ,'521.00/PSO/14/1171'
+         ,'521.00/PSO/14/1173'
+         ,'521.00/PSO/14/1174'
+         ,'521.00/PSO/14/1175'
+         ,'521.00/PSO/14/1176'
+         ,'521.00/PSO/14/1177'
+         ,'521.00/PSO/14/1179'
+         ,'521.00/PSO/14/1181'
+         ,'521.00/PSO/14/1184'
+         ,'521.00/PSO/14/1185'
+         ,'521.00/PSO/14/1186'
+);
+
+update cbpmthmt set status=3,chq_run=null where  dept_id = '521.00' and doc_no in (
+		'521.00/PSO/14/1162'
+         ,'521.00/PSO/14/1163'
+         ,'521.00/PSO/14/1164'
+         ,'521.00/PSO/14/1165'
+         ,'521.00/PSO/14/1166'
+         ,'521.00/PSO/14/1167'
+         ,'521.00/PSO/14/1168'
+         ,'521.00/PSO/14/1169'
+         ,'521.00/PSO/14/1170'
+         ,'521.00/PSO/14/1171'
+         ,'521.00/PSO/14/1173'
+         ,'521.00/PSO/14/1174'
+         ,'521.00/PSO/14/1175'
+         ,'521.00/PSO/14/1176'
+         ,'521.00/PSO/14/1177'
+         ,'521.00/PSO/14/1179'
+         ,'521.00/PSO/14/1181'
+         ,'521.00/PSO/14/1184'
+         ,'521.00/PSO/14/1185'
+         ,'521.00/PSO/14/1186'
+);
+
+ select * from splabrat where 	LABOUR_CODE = 'SM1.4' and dept_id = '445.20'
+ 
+ 
+ select * from piv_detail where reference_no like '433.50/ENC/14/0697%'
+ 
+update  piv_detail set reference_no = '433.50/ENC/14/0697' where reference_no like '433.50/ENC/14/0697%'
+ 
+  select * from piv_detail where reference_no = '433.50/ENC/14/0697'
+  
+  select * from spcrconv where FROM_PHASE = 1 and TO_PHASE = 3
+  select * from Spcrconvh
+  
+select * from APPESTLIM where dept_id like '534.30%' and APPLICATION_TYPE='NC'
+INSERT INTO APPESTLIM (DEPT_ID,APPLICATION_TYPE,USER_LEVEL,LIMIT_FROM,LIMIT_TO,STATUS_FROM,STATUS_TO,UPD_USER,UPD_DATE,UPD_TIME,APPROVAL_TYPE) VALUES ('534.00','NC','EA',25000,50000,45,46,'IMPORT',{d '2014-09-25'},'11:53:50am','EST');
+INSERT INTO APPESTLIM (DEPT_ID,APPLICATION_TYPE,USER_LEVEL,LIMIT_FROM,LIMIT_TO,STATUS_FROM,STATUS_TO,UPD_USER,UPD_DATE,UPD_TIME,APPROVAL_TYPE) VALUES ('534.00','NC','EA',25000,50000,56,57,'IMPORT',{d '2014-09-25'},'11:53:50am','JOB');
+select * from APPESTLIM where dept_id like '535.00%' and APPLICATION_TYPE='NC' and user_level = 'EA'
+update APPESTLIM set LIMIT_FROM = 50000 where dept_id like '534.00%' and APPLICATION_TYPE='NC' and user_level = 'EE'
+delete from APPESTLIM where dept_id like '535.00%' and APPLICATION_TYPE='NC' and user_level = 'EA'
+
+
+SELECT APPLICATIONS.APPLICATION_NO, PIV_DETAIL.PIV_NO,
+  PIV_DETAIL.PIV_DATE, PIV_DETAIL.PIV_AMOUNT, PIV_DETAIL.CONFIRMED_DATE,
+  APPLICATIONS.APPLICATION_NO,APPLICATIONS.SUBMIT_DATE, PCESTHMT.PROJECT_NO,
+  APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME, APPLICANT.STREET_ADDRESS,
+  APPLICANT.SUBURB, APPLICANT.CITY, SPESTCND.AMOUNT,
+  SPESTCND.SEAL_NO, SPESTCND.FINISHED_DATE, SPESTCND.STATUS,
+  SPESTCNT.CONTRACTOR_NAME, SPESTCNT.CONTRACTOR_ADDRESS,
+  SPODRCRD.METER_NO_1, SPODRCRD.INIT_READING_1,
+  SPODRCRD.METER_NO_2, SPODRCRD.INIT_READING_2,
+  SPODRCRD.METER_NO_3, SPODRCRD.INIT_READING_3,
+  WIRING_LAND_DETAIL.NEIGHBOURS_ACC_NO, WIRING_LAND_DETAIL.PHASE,
+  WIRING_LAND_DETAIL.CONNECTION_TYPE, WIRING_LAND_DETAIL.TARIFF_CAT_CODE,
+  WIRING_LAND_DETAIL.TARIFF_CODE, SPSEREST.TOTAL_LENGTH,
+  SPSEREST.SIN, SPSEREST.WIRING_TYPE, SPODRCRD.CONNECTED_DATE,
+  WIRING_LAND_DETAIL.SERVICE_STREET_ADDRESS, WIRING_LAND_DETAIL.SERVICE_SUBURB,
+  WIRING_LAND_DETAIL.SERVICE_CITY, SPEXPJOB.ACCOUNT_NO,
+  SPEXPJOB.ACC_CREATED_DATE, PIV_DETAIL.PIV_RECEIPT_NO
+  FROM
+       PCESTHMT JOIN APPLICATIONS JOIN PIV_DETAIL ON TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(PIV_DETAIL.REFERENCE_NO)
+    OR  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(PIV_DETAIL.REFERENCE_NO) ON  TRIM(PCESTHMT.ESTIMATE_NO) =  TRIM(APPLICATIONS.APPLICATION_NO) JOIN APPLICANT ON APPLICATIONS.ID_NO = APPLICANT.ID_NO JOIN SPESTCND ON PCESTHMT.PROJECT_NO = SPESTCND.PROJECT_NO JOIN SPESTCNT ON SPESTCND.CONTRACTOR_ID = SPESTCNT.CONTRACTOR_ID
+    AND SPESTCND.DEPT_ID = SPESTCNT.DEPT_ID JOIN SPODRCRD ON SPESTCND.PROJECT_NO = SPODRCRD.PROJECT_NO JOIN WIRING_LAND_DETAIL ON  TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(WIRING_LAND_DETAIL.APPLICATION_ID) JOIN SPSEREST ON  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(SPSEREST.APPLICATION_NO) LEFT OUTER JOIN SPEXPJOB ON PCESTHMT.PROJECT_NO = SPEXPJOB.PROJECT_NO
+  WHERE APPLICATIONS.DEPT_ID = '536.50'
+ AND (SPESTCND.STATUS = 'F' or SPESTCND.STATUS = 'B')
+    AND SPESTCND.CONTRACTOR_ID IN (
+    SELECT SPESTCNT.CONTRACTOR_ID
+      FROM SPESTCNT
+      WHERE SPESTCNT.DEPT_ID  = '536.50' )
+AND  PCESTHMT.DEPT_ID =  '536.50'
+    AND SPESTCND.FINISHED_DATE >= to_date('29/09/2014','dd/mm/yyyy')
+    AND SPESTCND.FINISHED_DATE <=  to_date('02/10/2014','dd/mm/yyyy')
+AND  PCESTHMT.PROJECT_NO LIKE  '%SMC%'
+  ORDER BY PCESTHMT.PROJECT_NO ASC
+  
+  select * from SPESTCND where dept_id = '536.50'
+  AND SPESTCND.FINISHED_DATE >= to_date('29/09/2014','dd/mm/yyyy')
+    AND SPESTCND.FINISHED_DATE <=  to_date('02/10/2014','dd/mm/yyyy')
+    AND (SPESTCND.STATUS = 'F' or SPESTCND.STATUS = 'B')
+    
+    
+    SELECT APPLICATIONS.APPLICATION_NO, PIV_DETAIL.PIV_NO,
+  PIV_DETAIL.PIV_DATE, PIV_DETAIL.PIV_AMOUNT, PIV_DETAIL.CONFIRMED_DATE,
+  APPLICATIONS.APPLICATION_NO,APPLICATIONS.SUBMIT_DATE, PCESTHMT.PROJECT_NO,
+  APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME, APPLICANT.STREET_ADDRESS,
+  APPLICANT.SUBURB, APPLICANT.CITY, SPESTCND.AMOUNT,
+  SPESTCND.SEAL_NO, SPESTCND.FINISHED_DATE, SPESTCND.STATUS,
+  SPESTCNT.CONTRACTOR_NAME, SPESTCNT.CONTRACTOR_ADDRESS,
+  SPODRCRD.METER_NO_1, SPODRCRD.INIT_READING_1,
+  SPODRCRD.METER_NO_2, SPODRCRD.INIT_READING_2,
+  SPODRCRD.METER_NO_3, SPODRCRD.INIT_READING_3,
+  WIRING_LAND_DETAIL.NEIGHBOURS_ACC_NO, WIRING_LAND_DETAIL.PHASE,
+  WIRING_LAND_DETAIL.CONNECTION_TYPE, WIRING_LAND_DETAIL.TARIFF_CAT_CODE,
+  WIRING_LAND_DETAIL.TARIFF_CODE, SPSEREST.TOTAL_LENGTH,
+  SPSEREST.SIN, SPSEREST.WIRING_TYPE, SPODRCRD.CONNECTED_DATE,
+  WIRING_LAND_DETAIL.SERVICE_STREET_ADDRESS, WIRING_LAND_DETAIL.SERVICE_SUBURB,
+  WIRING_LAND_DETAIL.SERVICE_CITY, SPEXPJOB.ACCOUNT_NO,
+  SPEXPJOB.ACC_CREATED_DATE, PIV_DETAIL.PIV_RECEIPT_NO
+  FROM
+       PCESTHMT JOIN APPLICATIONS JOIN PIV_DETAIL ON TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(PIV_DETAIL.REFERENCE_NO)
+    OR  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(PIV_DETAIL.REFERENCE_NO) ON  TRIM(PCESTHMT.ESTIMATE_NO) =  TRIM(APPLICATIONS.APPLICATION_NO) JOIN APPLICANT ON APPLICATIONS.ID_NO = APPLICANT.ID_NO JOIN SPESTCND ON PCESTHMT.PROJECT_NO = SPESTCND.PROJECT_NO JOIN SPESTCNT ON SPESTCND.CONTRACTOR_ID = SPESTCNT.CONTRACTOR_ID
+    AND SPESTCND.DEPT_ID = SPESTCNT.DEPT_ID JOIN SPODRCRD ON SPESTCND.PROJECT_NO = SPODRCRD.PROJECT_NO JOIN WIRING_LAND_DETAIL ON  TRIM(APPLICATIONS.APPLICATION_ID) =  TRIM(WIRING_LAND_DETAIL.APPLICATION_ID) JOIN SPSEREST ON  TRIM(APPLICATIONS.APPLICATION_NO) =  TRIM(SPSEREST.APPLICATION_NO) LEFT OUTER JOIN SPEXPJOB ON PCESTHMT.PROJECT_NO = SPEXPJOB.PROJECT_NO
+  WHERE APPLICATIONS.DEPT_ID = '536.50'
+ AND (SPESTCND.STATUS = 'F' or SPESTCND.STATUS = 'B')
+    AND SPESTCND.CONTR
+    ACTOR_ID IN (
+    SELECT SPESTCNT.CONTRACTOR_ID
+      FROM SPESTCNT
+      WHERE SPESTCNT.DEPT_ID  = '536.50' )
+AND  PCESTHMT.DEPT_ID =  '536.50'
+    AND SPESTCND.FINISHED_DATE >= to_date('29/09/2014','dd/mm/yyyy')
+    AND SPESTCND.FINISHED_DATE <=  to_date('02/10/2014','dd/mm/yyyy')
+AND  PCESTHMT.PROJECT_NO LIKE  '%SMC%'
+  ORDER BY PCESTHMT.PROJECT_NO ASC
+  
+select * from SPESTCNT where dept_id = '536.50'
+
+----T1 T2 T3 report SQL
+select b.application_No,b.application_Id, b.projectno, c.connected_Date
+from Spexpjob a, Spodrcrd c , Application_Reference b
+where a.acc_Created_Date >= to_date('01/09/2014','dd/mm/yyyy') 
+and a.acc_Created_Date <= to_date('30/09/2014','dd/mm/yyyy')
+and a.dept_Id ='457.20'
+and a.smc_Type ='N' 
+and a.project_No = c.project_no 
+and trim(a.project_No) = b.projectno 
+
+select PROJECTNO from application_reference where dept_id = '521.10'
+and PROJECTNO like '%CRJ%'
+order by PROJECTNO desc
+
+select * from pcesthmt where project_no = '521.10/CRJ/14/0299'
+
+update spratesm set contingency = 10
+
+select * from application_reference where length(application_No)=20
+ and length(trim(application_No))=18
+ and projectno like '%/11/%'
+ update application_reference set projectno = trim(projectno)
+ 
+ select * from spestlab where length(estimate_no)= 20
+ and length(trim(estimate_no))=18
+  
+ select * from spcstngm where dept_id = '512.20' and TARIFF_CAT_CODE = 'GP'
+ 
+ select * from Spcndctmh where dept_id = '512.20'
+ 
+ select * from application_reference where dept_id = '437.10'
+ and projectno like '%SMC/14%'
+ order by projectno desc
+ 
+ select * from pcesthmt where project_no = '437.10/SMC/14/0901'
+ select status from pcesthtt where estimate_no = '437.10/ENC/14/0941'
+ 
+ select * from report_smc r
+ select * from report_smc_category
+ 
+ select CATEGORY_NAME, REPORT_ID,  REPORT_NAME 
+ from report_smc r,report_smc_category c
+ where r.CATEGORY_ID = c.CATEGORY_ID
+ order by CATEGORY_NAME, REPORT_NAME
+ 
+ PIV/514.20/ANC/14/0230 normal	514.20/ENC/14/0143 		PIV/514.20/ENC/14/0108
+PIV/514.20/ANC/14/0231 samurdi	514.20/ENC/14/0144 <30000	PIV/514.20/ENC/14/0109
+PIV/514.20/ANC/14/0232 samurdi	514.20/ENC/14/0145 >30000	PIV/514.20/ENC/14/0110,PIV/514.20/ENC/14/0111
+PIV/514.20/ANC/14/0233 rhc	514.20/ENC/14/0147 >40000	PIV/514.20/ENC/14/0113,PIV/514.20/ENC/14/0114
+PIV/514.20/ANC/14/0234	rhc	514.20/ENC/14/0146 <40000	PIV/514.20/ENC/14/0112
+
+select * from ONLINE_PIV where REFERENCE_NO = '442.50/SMC/16/0525'
+delete from ONLINE_PIV where REFERENCE_NO = '442.50/SMC/16/0525'
+
+SELECT  project_no, mat_nm, res_cd, ISSUED_QTY,(select CONTRACTOR_NAME from spestcnt where dept_id = '534.80' and contractor_id = '0009') as con_name
+  FROM
+       PCESTDMT JOIN PCESTHMT ON TRIM(PCESTDMT.ESTIMATE_NO) = TRIM(PCESTHMT.ESTIMATE_NO)
+    AND PCESTDMT.DEPT_ID = PCESTHMT.DEPT_ID JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD
+  WHERE PCESTHMT.PROJECT_NO IN ('534.80/MTN/14/0346' ) AND PCESTHMT.DEPT_ID =  '534.80'
+  ORDER BY MAT_CD, PROJECT_NO
+  
+  SELECT  *
+  FROM
+       PCESTDMT JOIN PCESTHMT ON TRIM(PCESTDMT.ESTIMATE_NO) = TRIM(PCESTHMT.ESTIMATE_NO)
+    AND PCESTDMT.DEPT_ID = PCESTHMT.DEPT_ID JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD
+  WHERE PCESTHMT.PROJECT_NO IN ('534.80/MTN/14/0346' ) AND PCESTHMT.DEPT_ID =  '534.80'
+  ORDER BY MAT_CD, PROJECT_NO
+  
+  
+  SELECT APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME,
+  BANK.BANK_NAME, BANK_BRANCH.BRANCH_NAME, PIV_DETAIL.PIV_NO,
+  PIV_DETAIL.REFERENCE_NO, PIV_DETAIL.PIV_RECEIPT_NO,
+  PIV_DETAIL.PIV_DATE, PIV_DETAIL.PIV_AMOUNT, PIV_DETAIL.PAID_DATE,
+  APPLICANT.STREET_ADDRESS, APPLICANT.SUBURB, APPLICANT.CITY,
+  PIV_DETAIL.SECURITY_DEPOSIT, PIV_DETAIL.CONFIRMED_DATE,
+  APPLICATION_REFERENCE.PROJECTNO
+  FROM
+       PIV_DETAIL JOIN APPLICANT ON PIV_DETAIL.ID_NO = APPLICANT.ID_NO JOIN BANK ON PIV_DETAIL.BANK_CODE = BANK.BANK_CODE JOIN BANK_BRANCH ON BANK.BANK_CODE = BANK_BRANCH.BANK_CODE
+    AND PIV_DETAIL.BRANCH_CODE = BANK_BRANCH.BRANCH_CODE LEFT OUTER JOIN APPLICATION_REFERENCE ON PIV_DETAIL.REFERENCE_NO = APPLICATION_REFERENCE.APPLICATION_NO
+  WHERE PIV_DETAIL.DEPT_ID IN ('424.20')
+
+
+
+  AND PIV_DETAIL.CONFIRMED_DATE >= to_date('01/11/2014','dd/mm/yyyy')
+    AND PIV_DETAIL.CONFIRMED_DATE <= to_date('30/11/2014','dd/mm/yyyy')
+    AND (PIV_DETAIL.STATUS = 'P' OR PIV_DETAIL.STATUS = 'C')
+    -- AND (PIV_DETAIL.PIV_NO LIKE '%ECR%' OR PIV_DETAIL.PIV_NO LIKE '%JCR%'  )
+     and application_no like '%/ECR/%'
+     ORDER BY  APPLICATION_REFERENCE.PROJECTNO ASC
+     
+     select * from APPLICATION_REFERENCE
+     
+     select distinct trx_type from intrhmt
+     
+    select * from splabrat where dept_id = '439.40' and labour_code = 'B71'
+    
+    SELECT * FROM SPEXPJOB WHERE PROJECT_NO = '455.20/SMC/14/1880'
+    
+    select status from intrhmt where dept_id = '536.50' and doc_pf = 'GRN' and doc_no = '536.50/GRN/14/0053'
+    
+    update intrhmt set status = 6  where dept_id = '536.50' and doc_pf = 'GRN' and doc_no = '536.50/GRN/14/0053'
+    
+    select * from cbpmthmt where 
+    chq_run='800.00/PPP/14/0653' and 
+    status = 7 and 
+    doc_no in ('800.00/PSA/14/0281',
+'800.00/PSA/14/0282',
+'800.00/PSA/14/0283',
+'860.00/PS1/14/0668',
+'860.00/PS1/14/0669')
+
+    update cbpmthmt set status=3,chq_run=null where chq_run='800.00/PPP/14/0653' and 
+    status = 7 and 
+    doc_no in ('800.00/PSA/14/0281',
+'800.00/PSA/14/0282',
+'800.00/PSA/14/0283',
+'860.00/PS1/14/0668',
+'860.00/PS1/14/0669')
+     
+select * from applications where application_no = '423.50/ECR/15/0010' 
+
+select customer_type from wiring_land_detail where application_id = '431.40/ANC/15/0047'
+
+select * from spestedy where reference_no = '536.20/ENC/14/3511'
+select * from application_reference where application_no = '536.20/ENC/14/3511'
+select * from applications where application_id = '536.20/ANC/14/3537'
+
+delete from spestedy where reference_no = '536.20/ENC/14/3511'
+update application_reference set application_no = ' ' where application_id = '536.20/ANC/14/3537'
+update applications set status = 'N' where application_id = '536.20/ANC/14/3537'
+
+select * FROM spstdesthmt where app_no = '440.00/BS/14/0083'
+
+select * from bank_branch where bank_code = '7010'
+
+-- application no generated
+select * from applications where status = 'C' where dept_id = '' and submit_date > fromdate and submit_date < todate
+select * from applications where application_id = '514.20/ANC/15/0231' 514.20/ENC/15/0231
+--service estimate created
+select * from SPESTEDY where status = 'V'
+
+select * from SPESTEDY where reference_no = '521.50/ENC/15/0072'
+
+select * from spestedy where reference_no = '461.20/ENC/15/0061'
+
+select * from spcrconv
+select * from spcstngm where dept_id = '527.30'
+
+select * from Spsecdeph where dept_id = '443.10'
+
+
+select b.application_No,b.application_Id, a.project_No,ACC_CREATED_DATE,
+(select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_Id
+and reference_type = 'APP' and status = 'C') as piv_1_date,
+c.APPROVED_DATE as approval_date,
+d.TOTAL_COST    as estimate_cost,
+(select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_No
+ and  reference_type = 'EST'
+and status = 'P' ) as  piv2_date,
+(select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No) as Engized_date ,
+(c.APPROVED_DATE - (select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_Id
+and reference_type = 'APP' and status = 'C') ) AS t1,
+((select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No) - c.APPROVED_DATE) AS t2_ln,
+((select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No) -(select CONFIRMED_DATE from PIV_DETAIL where
+reference_no = b.application_No
+ and  reference_type = 'EST'
+and status = 'P')  ) AS t2_Smc,
+(ACC_CREATED_DATE - (select CONNECTED_DATE from spodrcrd
+  where PROJECT_NO = a.project_No)) as T3,
+(select 'Loan'  from PIV_DETAIL where
+reference_no = b.application_No
+ and   reference_type = 'ELN'
+and status = 'C') as Loan ,
+(select dept_nm from gldeptm where dept_id =  $P{costCenter}) AS CCT_NAME
+from Spexpjob a,Application_Reference b  , approval c ,speststd  d
+WHERE TRIM(a.project_No) = TRIM(b.PROJECTNO)
+and a.ACC_CREATED_DATE >= $P{fromDate}
+and a.ACC_CREATED_DATE <= $P{toDate}
+and a.dept_Id =  $P{costCenter}
+and c.reference_no =b.application_No
+and d.estimate_no =b.application_No
+and d.TOTAL_COST = c.standard_cost
+and c.TO_STATUS = 30
+and a.project_No LIKE '%SMC%' ORDER BY a.project_No
+
+select * from spcstngm where dept_id = '413.10' and PHASE = 3  and CONNECTION_TYPE = 30 and TARIFF_CAT_CODE = 'GP'
+
+select * from splpsvcm where dept_id = '548.00'
+
+
+
+
+
+  select * from SPODRCRD
+  
+  select * from pcesthtt h, pcestdtt d
+  where h.dept_id = '423.50' 
+  and to_date('01/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  and to_date('28/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  and d.ESTIMATE_NO = h.ESTIMATE_NO
+  
+  select distinct dept_id from pcestdmt where FUND_QTY>0
+  
+  select project_no,d.RES_cd,m.mat_nm,d.UNIT_PRICE*ESTIMATE_QTY as totcost,d.UNIT_PRICE*FUND_QTY as cebcost
+  from pcesthmt h, pcestdmt d, inmatm m
+  where h.dept_id = '423.50' 
+  and to_date('01/03/2015','dd/mm/yyyy')< h.ETIMATE_DT 
+  and to_date('28/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  and d.ESTIMATE_NO = h.ESTIMATE_NO
+  and d.dept_id = h.dept_id
+  and d.ESTIMATE_NO like '%/ENC/%'
+  and m.mat_cd = d.res_cd
+
+select * from inmatm
+  group by project_no
+  
+  
+  select project_no , qry.RES_TYPE, qry.totcost, qry.cebcost
+  from  pcesthmt h, (select estimate_no, RES_TYPE, sum(UNIT_PRICE*FUND_QTY) as cebcost, sum(UNIT_PRICE*ESTIMATE_QTY) as totcost
+  from pcestdmt d
+  where d.ESTIMATE_NO like '%/ENC/%'
+  and d.dept_id = '526.30' 
+  group by estimate_no,RES_TYPE) qry
+  where h.estimate_no = qry.estimate_no
+  and to_date('01/03/2015','dd/mm/yyyy')< h.ETIMATE_DT 
+  and to_date('28/03/2015','dd/mm/yyyy')> h.ETIMATE_DT 
+  order by project_no
+  
+  order by estimate_no, RES_TYPE
+  
+  select * from spestlab where estimate_no like '435.60/ETC/15/0001%'
+  
+  update spestlab set estimate_no = trim(estimate_no) where estimate_no like '435.60/ETC/15/0001%'
+  
+  SELECT *  FROM PCESTDMT LEFT OUTER JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD
+  WHERE TRIM(PCESTDMT.ESTIMATE_NO) = TRIM( '455.20/ESA/15/0003')  and REV_NO = 1  and CUSTOMER_QTY > 0
+  ORDER BY  RES_CD
+  
+  SELECT PCESTDMT.ESTIMATE_NO, PCESTDMT.RES_CD, PCESTDMT.ESTIMATE_QTY,
+  PCESTDMT.ESTIMATE_COST, PCESTDMT.CUSTOMER_QTY,
+  PCESTDMT.DAMAGE_QTY, PCESTDMT.MNT_QTY, PCESTDMT.UNIT_PRICE,
+  (PCESTDMT.ESTIMATE_QTY - PCESTDMT.CUSTOMER_QTY) AS WITHOUTCUSTQTY,
+  PCESTDMT.REV_NO, PCESTDMT.DEPT_ID, PCESTDMT.RES_TYPE,
+  PCESTDMT.RES_CAT, PCESTDMT.GEN_RES, PCESTDMT.UOM,
+  PCESTDMT.TOLERANCE, PCESTDMT.ISSUED_QTY, PCESTDMT.COMMITED_QTY,
+  PCESTDMT.COMMITED_COST, PCESTDMT.ISSUED_COST,
+  PCESTDMT.NORM_DEFAULT, PCESTDMT.REQUESTED_QTY,
+  PCESTDMT.REQUESTED_COST, PCESTDMT.APPROVED_QTY,
+  PCESTDMT.APPROVED_COST, PCESTDMT.RETURNED_QTY,
+  PCESTDMT.RETURNED_COST, INMATM.COMP_ID, INMATM.DEPT_ID,
+  INMATM.MAT_CD, INMATM.MAT_NM, INMATM.CLS_CD,
+  INMATM.MAJ_UOM, INMATM.MIN_UOM, INMATM.CONV_FACT,
+  INMATM.PRIC_MTHD, INMATM.UNIT_PRICE, INMATM.MAT_IMP,
+  INMATM.ABC_CAT, INMATM.WEIGHT, INMATM.CONTROLLED,
+  INMATM.ORD_LT_UOM, INMATM.STATUS, INMATM.LOG_ID,
+  INMATM.ENT_BY, INMATM.ENT_DT, INMATM.MODI_BY,
+  INMATM.MODI_DT, INMATM.MOVEMENT, PCESTHMT.PROJECT_NO
+  FROM
+       PCESTDMT LEFT OUTER JOIN INMATM ON PCESTDMT.RES_CD = INMATM.MAT_CD JOIN PCESTHMT ON PCESTDMT.ESTIMATE_NO = PCESTHMT.ESTIMATE_NO
+  WHERE TRIM(PCESTDMT.ESTIMATE_NO) =  '455.20/ESA/15/0003'
+  ORDER BY INMATM.MAT_CD
+  
+  select * from inmatm
+  
+  select a.RES_CD, (select mat_nm from inmatm where mat_cd=a.RES_CD), a.estimate_qty, a.unit_price, a.estimate_cost
+FROM
+       PCESTDMT a where   TRIM(a.ESTIMATE_NO) =  '464.30/EMT/15/0006'
+order by a.RES_CD
+
+select h.estimate_no, project_no, status from pcesthmt h join   
+(select distinct ESTIMATE_NO from (select  ESTIMATE_NO, RES_CD,count(RES_CD) cnt 
+from PCESTDMT where length(trim(ESTIMATE_NO)) = 18 group by  ESTIMATE_NO, RES_CD) qry where cnt>1) q on
+h.estimate_no = q.estimate_no
+
+
+where 
+order by ESTIMATE_NO,RES_CD
+
+select * from pcestdmt where   TRIM(ESTIMATE_NO) =  '464.30/EMT/15/0006' and rev_no = 2 order by RES_CD
+delete from pcestdmt where   TRIM(ESTIMATE_NO) =  '464.30/EMT/15/0006' and rev_no = 2 
+
+
+SELECT APPLICATIONS.APPLICATION_NO, PCESTHMT.PROJECT_NO,
+  APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME, 
+  
+  WIRING_LAND_DETAIL.PHASE,
+  WIRING_LAND_DETAIL.CONNECTION_TYPE, WIRING_LAND_DETAIL.TARIFF_CAT_CODE,
+  WIRING_LAND_DETAIL.TARIFF_CODE, 
+   WIRING_LAND_DETAIL.SERVICE_STREET_ADDRESS,
+  WIRING_LAND_DETAIL.SERVICE_SUBURB, WIRING_LAND_DETAIL.SERVICE_CITY, PCESTHMT.std_cost,PCESTHMT.PRJ_ASS_DT
+  FROM
+       PCESTHMT JOIN APPLICATIONS ON TRIM(PCESTHMT.ESTIMATE_NO) = TRIM(APPLICATIONS.APPLICATION_NO) 
+       
+    JOIN APPLICANT ON APPLICATIONS.ID_NO = APPLICANT.ID_NO
+    JOIN WIRING_LAND_DETAIL ON APPLICATIONS.APPLICATION_ID = WIRING_LAND_DETAIL.APPLICATION_ID
+
+
+
+  WHERE APPLICATIONS.DEPT_ID =  '411.10'
+ 
+    AND PCESTHMT.PRJ_ASS_DT >=  to_date('01/04/2015','dd/mm/yyyy')
+    AND PCESTHMT.PRJ_ASS_DT<= to_date('30/04/2015','dd/mm/yyyy')
+AND PCESTHMT.PROJECT_NO LIKE '%SMC%'
+order by PCESTHMT.PROJECT_NO
+
+select * from applications
+select estimate_no,ETIMATE_DT,APPLICATION_TYPE  from pcesthtt p, applications a where ETIMATE_DT >=  to_date('01/04/2015','dd/mm/yyyy')
+and ETIMATE_DT <=  to_date('30/04/2015','dd/mm/yyyy')
+and trim(p.estimate_no) = trim(a.APPLICATION_NO)
+order by application_type
+
+select * from wiring_land_detail where SERVICE_STREET_ADDRESS like '%57/1%' order by SERVICE_CITY
+and (SERVICE_SUBURB like '%dehi%' or SERVICE_CITY like '%dehi%')
+ select * from pcesthtt where estimate_no like '%/ESA/15%'
+ 
+ insert into rep_roles_cct (roleid, costcentre,lvl_no) values ('niro', '462.20', 0)
+ 
+ select * from inmatm
+ 
+ update REPORT_SMC_PARA set SELECTED_LIST = '11000000000' where PARA_ID = 6 and REPORT_ID = 'R0004'
+update REPORT_SMC set REPORT_NAME = 'Application Register(With App. Fee)' where REPORT_ID = 'R0004'
+update REPORT_SMC_PARA set SELECTED_LIST = '11101111111' where PARA_ID = 6 and REPORT_ID = 'R0055'
+update REPORT_SMC set REPORT_NAME = 'Application Register' where REPORT_ID = 'R0055'
+
+up
+
+select * from gldeptin where DEPT_FULL_NAME like '%WATTALA%'
+
+select b.projectNo,a.CONSUMER_NAME,SERVICE_STREET_ADDRESS,SERVICE_SUBURB,SERVICE_CITY ,
+c.connected_Date, a.FINISHED_DATE 
+
+    from Spestcnd a,Application_Reference b , Spodrcrd c, APPLICATIONS d, wiring_land_detail w
+
+    WHERE TRIM(a.project_No) = b.projectNo
+
+    and b.projectNo = TRIM(c.project_No)
+
+    and b.application_no = d.application_no
+
+    and w.APPLICATION_ID = d.APPLICATION_ID
+
+   and c.connected_Date >= to_date('01/01/2015','dd/mm/yyyy')
+   and c.connected_Date <= to_date('28/09/2015','dd/mm/yyyy')
+
+and d.APPLICATION_TYPE in ('NC')
+
+and a.dept_Id = '548.20'
+
+and (a.is_exported ='N' or a.is_exported is null )
+
+and a.project_No LIKE '%SMC%'
+
+ORDER BY a.project_No
+
+select * from online_payment where ORDER_ID = '40581' order by PAYMENT_DATE  
+update online_payment set 
+REFERENCE_NO = '433.50/ENC/15/0936', 
+UPDATE_STATUS = 2,
+AUTH_CODE = '630068',
+AUTH_DATE = to_date('2015-10-15 11:00:32','yyyy-mm-dd HH24:mi:ss'),
+BANK_CODE = '7083',
+CARD_NO = 'XXXXXXXXXXXX1995'
+where ORDER_ID = '40581'
+
+
+select * from applicant where LAST_NAME like 'ARUNASHANTHI'
+
+select * from application_reference where ID_NO = '798140426v'
+
+select * from  piv_detail where reference_no='433.50/ENC/15/0936'
+
+select * from online_piv where reference_no='433.50/ENC/15/0936'
+update online_piv set status = 'P' where reference_no='433.50/ENC/15/0936'
+
+SELECT * FROM spcstngm WHERE DEPT_ID = '542.00' AND PHASE = 1 AND CONNECTION_TYPE = 30 AND TARIFF_CAT_CODE = 'DP'
+
+SELECT * FROM spsecdep WHERE DEPT_ID = '541.00' AND PHASE = 1 AND CONNECTION_TYPE = 30 AND TARIFF_CAT_CODE = 'DP'
+UPDATE spsecdep SET SECURITY_DEPOSIT = 1000 WHERE DEPT_ID = '541.20' AND PHASE = 1 AND CONNECTION_TYPE = 30 AND TARIFF_CAT_CODE = 'DP'
+
+select * from sauserm where JOB_TITLE like '%PUBLIC%'
+select * from sauserm where RPT_USER like '450.00%' and JOB_TITLE like '%ELECTRICAL ENGINEER%'
+select * from sauserm where RPT_USER like '450%'and JOB_TITLE like '%ACCOUNTANT%'
+
+select * from Approval_Subtype_Path where dept_id = '534.30'
+and APPROVAL_TYPE = 'EST' and APPLICATION_SUB_TYPE='NC'
+
+
+update Approval_Subtype_Path set SUB_TYPE_PATH='NC' where dept_id = '534.30'
+and APPROVAL_TYPE = 'EST' and APPLICATION_SUB_TYPE='MT'
+
+
+select * from spsecdep where DEPT_ID='515.20' and CONNECTION_TYPE=30 and PHASE=3
+select * from spsecdeph where DEPT_ID='515.20' and CONNECTION_TYPE=30 and PHASE=3 and year=2016
+
+SELECT distinct APPLICATIONS.APPLICATION_NO, PIV_DETAIL.PIV_NO,
+  PIV_DETAIL.PIV_DATE, PIV_DETAIL.PIV_AMOUNT, PIV_DETAIL.CONFIRMED_DATE,
+  APPLICATIONS.SUBMIT_DATE, PCESTHMT.PROJECT_NO,
+  APPLICANT.FIRST_NAME, APPLICANT.LAST_NAME,
+  SPESTCND.AMOUNT,
+  SPESTCND.FINISHED_DATE,
+  SPESTCNT.CONTRACTOR_NAME,
+  SPODRCRD.METER_NO_1, SPODRCRD.INIT_READING_1,
+  SPODRCRD.METER_NO_2, SPODRCRD.INIT_READING_2,
+  SPODRCRD.METER_NO_3, SPODRCRD.INIT_READING_3,
+  WIRING_LAND_DETAIL.NEIGHBOURS_ACC_NO, WIRING_LAND_DETAIL.PHASE,
+  WIRING_LAND_DETAIL.CONNECTION_TYPE, WIRING_LAND_DETAIL.TARIFF_CAT_CODE,
+  WIRING_LAND_DETAIL.TARIFF_CODE, SPSEREST.TOTAL_LENGTH,
+  SPSEREST.SIN, SPSEREST.WIRING_TYPE, SPODRCRD.CONNECTED_DATE,
+  WIRING_LAND_DETAIL.SERVICE_STREET_ADDRESS, WIRING_LAND_DETAIL.SERVICE_SUBURB,
+  WIRING_LAND_DETAIL.SERVICE_CITY, SPEXPJOB.ACCOUNT_NO,
+  SPEXPJOB.ACC_CREATED_DATE, PIV_DETAIL.PIV_RECEIPT_NO
+  FROM
+      PCESTHMT JOIN APPLICATIONS JOIN PIV_DETAIL ON APPLICATIONS.APPLICATION_ID =  PIV_DETAIL.REFERENCE_NO
+    OR  APPLICATIONS.APPLICATION_NO =  PIV_DETAIL.REFERENCE_NO ON  TRIM(PCESTHMT.ESTIMATE_NO) =  TRIM(APPLICATIONS.APPLICATION_NO) JOIN APPLICANT ON APPLICATIONS.ID_NO = APPLICANT.ID_NO JOIN SPESTCND ON PCESTHMT.PROJECT_NO = SPESTCND.PROJECT_NO JOIN SPESTCNT ON SPESTCND.CONTRACTOR_ID = SPESTCNT.CONTRACTOR_ID
+    AND SPESTCND.DEPT_ID = SPESTCNT.DEPT_ID JOIN SPODRCRD ON SPESTCND.PROJECT_NO = SPODRCRD.PROJECT_NO JOIN WIRING_LAND_DETAIL ON  APPLICATIONS.APPLICATION_ID =  WIRING_LAND_DETAIL.APPLICATION_ID JOIN SPSEREST ON  APPLICATIONS.APPLICATION_NO =  SPSEREST.APPLICATION_NO LEFT OUTER JOIN SPEXPJOB ON PCESTHMT.PROJECT_NO = SPEXPJOB.PROJECT_NO
+  WHERE APPLICATIONS.DEPT_ID = $P{costCenter}
+ AND (SPESTCND.STATUS = 'F' or SPESTCND.STATUS = 'B')
+    AND SPESTCND.CONTRACTOR_ID IN (
+    SELECT SPESTCNT.CONTRACTOR_ID
+      FROM SPESTCNT
+      WHERE SPESTCNT.DEPT_ID  = $P{costCenterDepot} )
+AND  PCESTHMT.DEPT_ID =  $P{costCenterDepot}
+    AND SPESTCND.FINISHED_DATE >= $P{fromDate}
+    AND SPESTCND.FINISHED_DATE <=  $P{toDate}
+AND  PCESTHMT.PROJECT_NO LIKE  $P{jobType}
+  ORDER BY PCESTHMT.PROJECT_NO ASC
+  
+  select * from pcesthmt where estimate_no = '441.20/REJ/15/0074'
+  \
+ select * from splabrat where LABOUR_CODE like 'CR%'
+ 
+ select * from Spsecdeph where DEPT_ID = '525.20'
+ select * from applications
+ 
+ select e.ESTIMATE_NO, m.project_no, concat(FIRST_NAME,LAST_NAME), l.LOAN_AMOUNT, l.WIRING_COMPONENT, e.TOTAL_COST
+ from applicant app, applications a, spapplon l, speststd e, pcesthmt m 
+ where IS_LOAN_APP = 'M'
+ and a.APPLICATION_NO = l.APPLICATION_NO
+ and app.ID_NO = a.ID_NO
+ and trim(a.APPLICATION_NO) = trim(e.ESTIMATE_NO)
+ and a.dept_id = '534.30'
+ and trim(a.APPLICATION_NO) = trim(m.ESTIMATE_NO)
+ and PRJ_ASS_DT >= to_date('29/02/2016','dd/mm/yyyy')
+ --and PRJ_ASS_DTto_date('01/03/2016','dd/mm/yyyy')
+ 
+ select * from pcesthtt
+ 
+ select h.estimate_no ,h.ETIMATE_DT,c.LINE_LENGTH as Total_length , c.INSIDE_LENGTH as Premises_length , c.TOTAL_COST as Customer_amount, h.std_cost as detail_cost
+,(select dept_nm from gldeptm where dept_id =  '471.10') AS CCT_NAME
+  from  speststd c, pcesthtt h,applications l
+  where trim(h.estimate_no) = trim(c.estimate_no)
+  and h.ESTIMATE_NO like '%/ENC/%'
+  and h.dept_id = '471.10'
+  and trim(l.APPLICATION_NO) = trim(h.ESTIMATE_NO)
+  and h.ETIMATE_DT >= to_date('01/01/2016','dd/mm/yyyy')
+  and h.ETIMATE_DT <= to_date('01/03/2016','dd/mm/yyyy')
+  and l.IS_LOAN_APP = 'M'
+  
+group by   project_no,c.LINE_LENGTH,c.INSIDE_LENGTH , c.TOTAL_COST, qry.RES_TYPE, qry.totcost, qry.cebcost
+   order by project_no
+   
+   and h.ETIMATE_DT >= to_date('01/01/2016','dd/mm/yyyy')
+   
+   select estimate_no, RES_TYPE, sum(UNIT_PRICE*FUND_QTY) as cebcost, sum(UNIT_PRICE*ESTIMATE_QTY) as totcost
+  from pcestdtt d, applications l
+  where d.ESTIMATE_NO like '%/ENC/%'
+  and d.dept_id = '471.10'
+  and trim(l.APPLICATION_NO) = trim(d.ESTIMATE_NO)
+  and l.IS_LOAN_APP = 'M'
+--and etimate_DT to_date('01/03/2016','dd/mm/yyyy')
+  group by estimate_no,RES_TYPE
+ 
+  select IS_LOAN_APP from applications where APPLICATION_NO = '553.20/ENC/16/0113'
+  
+ select * from Spsvcwrm where DEPT_ID = '553.20' and MAT_CD = 'ZZ4437'
+update Spsvcwrm set MEASUREMENT_FACTOR=1 where DEPT_ID = '553.20' and MAT_CD = 'ZZ4437'
+ and PHASE = 1 and CONNECTION_TYPE=30 and 
+ 
+ select * FROM WIRING_LAND_DETAIL
+ 
+ select (select dept_nm from gldeptm where dept_id =  '534.30') AS CSC_NAME,e.ESTIMATE_NO, m.project_no, concat(FIRST_NAME,LAST_NAME), 
+ concat( SERVICE_STREET_ADDRESS,concat(' ',concat(SERVICE_SUBURB,concat(' ',SERVICE_CITY)))),
+ l.LOAN_AMOUNT, l.WIRING_COMPONENT, e.TOTAL_COST, std_cost
+ from applicant app, applications a, spapplon l, speststd e, pcesthmt m, WIRING_LAND_DETAIL W 
+ where IS_LOAN_APP = 'M'
+ and a.APPLICATION_NO = l.APPLICATION_NO
+ and app.ID_NO = a.ID_NO
+ and trim(a.APPLICATION_NO) = trim(e.ESTIMATE_NO)
+ and a.dept_id like '534.30%'
+ and trim(a.APPLICATION_NO) = trim(m.ESTIMATE_NO)
+ and PRJ_ASS_DT >= to_date('01/03/2016','dd/mm/yyyy')
+ and PRJ_ASS_DT <= to_date('29/03/2016','dd/mm/yyyy')
+ AND A.APPLICATION_ID = w.APPLICATION_ID
+ order by a.dept_id
+ --and PRJ_ASS_DTto_date('01/03/2016','dd/mm/yyyy')
+ 
+ select * from pcestdtt where estimate_no = '423.50/ENC/16/1469'
+ 
+ select (select dept_nm from gldeptm where dept_id =  '534.30') AS CSC_NAME,e.ESTIMATE_NO, m.project_no, concat(FIRST_NAME,LAST_NAME) as cus_name,
+ concat( SERVICE_STREET_ADDRESS,concat(' ',concat(SERVICE_SUBURB,concat(' ',SERVICE_CITY)))) as address,
+ l.LOAN_AMOUNT, l.WIRING_COMPONENT, e.TOTAL_COST, std_cost
+ from applicant app, applications a, spapplon l, speststd e, pcesthmt m, WIRING_LAND_DETAIL W
+ where IS_LOAN_APP = 'M'
+ and a.APPLICATION_NO = l.APPLICATION_NO
+ and app.ID_NO = a.ID_NO
+ and trim(a.APPLICATION_NO) = trim(e.ESTIMATE_NO)
+ and a.dept_id = '534.30'
+ and trim(a.APPLICATION_NO) = trim(m.ESTIMATE_NO)
+ and PRJ_ASS_DT >= to_date('01/03/2016','dd/mm/yyyy')
+ and PRJ_ASS_DT <= to_date('31/03/2016','dd/mm/yyyy')
+ AND A.APPLICATION_ID = w.APPLICATION_ID
+ order by a.dept_id
+ 
+ select * from splabrat where LABOUR_NAME like '%OTHER%'
+ select * from sausrdpm where USER_ID = '471EE' and dept_id like '436%'
+delete from sausrdpm where USER_ID = '471EE' and dept_id like '436%'

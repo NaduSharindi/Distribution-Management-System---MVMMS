@@ -1,0 +1,76 @@
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="persistenceUnitMMS"
+		transaction-type="JTA">
+		<!-- If you are running in a production environment, add a managed data 
+			source, this example data source is just for development and testing! -->
+		<!-- The datasource is deployed as WEB-INF/spring-quickstart-ds.xml, you 
+			can find it in the source at src/main/webapp/WEB-INF/spring-quickstart-ds.xml -->
+		<jta-data-source>java:jboss/datasources/webOrcleDatasourceDS</jta-data-source>
+		<class>com.it.piv.admin.domain.Sauserm</class>
+		<class>com.it.piv.admin.domain.Sausrdpl</class>
+		<class>com.it.piv.admin.domain.SausrdplPK</class>
+		<class>com.it.piv.admin.domain.Sausrdpm</class>
+		<class>com.it.piv.admin.domain.SausrdpmPK</class>
+		
+		<class>com.it.piv.mms.domain.Msttowertype</class>
+		<class>com.it.piv.mms.domain.MmsProvince</class>
+		<class>com.it.piv.mms.domain.MmsArea</class>
+		<class>com.it.piv.mms.domain.MmsTowermaintenance</class>
+		<class>com.it.piv.mms.domain.TestForm</class>
+		<class>com.it.piv.mms.domain.MmsCsc</class>
+		<class>com.it.piv.mms.domain.MmsAddlinetype</class>
+		<class>com.it.piv.mms.domain.MmsAddsupporttype</class>
+		<class>com.it.piv.mms.domain.MmsAddconductortype</class>
+		<class>com.it.piv.mms.domain.Spnorm</class>
+		<class>com.it.piv.mms.domain.MmsAddearthconductortype</class>
+		<class>com.it.piv.mms.domain.MmsAddinsulatortype</class>
+		<class>com.it.piv.mms.domain.MmsAddtowerconfiguration</class>
+		<class>com.it.piv.mms.domain.MmsAddtowerinsulator</class>
+		<class>com.it.piv.mms.domain.MmsAddstatustype</class>
+		<class>com.it.piv.mms.domain.MmsAddstatus</class>
+        <class>com.it.piv.mms.domain.MmsAddline</class>
+		<class>com.it.piv.mms.domain.MmsAddsupport</class>
+		<class>com.it.piv.mms.domain.MmsTowermaintenancePK</class>
+		<class>com.it.piv.mms.domain.Approval</class>
+		<class>com.it.piv.mms.domain.MmsTm</class>
+		<class>com.it.piv.mms.domain.MmsTmPK</class>
+		<class>com.it.piv.mms.domain.Glcompm</class>
+		<class>com.it.piv.mms.domain.Gldeptm</class>
+		<class>com.it.piv.mms.domain.MmsAddgantry</class>
+		<class>com.it.piv.mms.domain.MmsAddfeeder</class>
+		<class>com.it.piv.mms.domain.MmsAddfeederPK</class>
+		<class>com.it.piv.mms.domain.MmsGantryloc</class>
+		<class>com.it.piv.mms.domain.MmsGantrylocPK</class>
+		<class>com.it.piv.mms.domain.MmsAddmvpolecct</class>
+		<class>com.it.piv.mms.domain.MmsAddmvpolecctPK</class>
+		
+		 
+		<properties>
+			 <property name="jboss.entity.manager.factory.jndi.name"
+				value="java:jboss/persistenceMMS" />
+			 <!-- Properties for Hibernate -->
+			<property name="hibernate.transaction.manager_lookup_class"
+				value="org.hibernate.transaction.JBossTransactionManagerLookup" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.connection.pool_size" value="20" />
+			<property name="hibernate.connection.timeout" value="10" />
+			<property name="hibernate.connection.idle_test_period"
+				value="3000" />
+			<property name="hibernate.connection.maxIdle" value="20" />
+			<property name="hibernate.connection.maxWait" value="300" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
+			<!-- property name="hibernate.hbm2ddl.auto" value="update"/ -->
+			<property name="hibernate.connection.autocommit" value="false" />
+			<!--<property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JTATransactionFactory"/> -->
+			<!--<property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/> -->
+
+
+
+		</properties>
+	</persistence-unit>
+</persistence>

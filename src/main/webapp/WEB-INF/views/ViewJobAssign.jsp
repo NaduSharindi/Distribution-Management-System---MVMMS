@@ -1,0 +1,157 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="<c:url value="/resources/css/ebems.css"/>"/>
+ <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        margin-left:0px;
+        margin-right:auto;
+      }
+      #form {
+        width: 400px;
+        height: 400px;
+        margin-left:0px;
+        margin-top:50px;
+      }
+</style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+     
+      function initAutocomplete() {
+    	  var map = new google.maps.Map(document.getElementById('map'), {
+    	    center: {lat: -33.8688, lng: 151.2195},
+    	    zoom: 13,
+    	    mapTypeId: google.maps.MapTypeId.ROADMAP
+    	  });
+
+    	  // Create the search box and link it to the UI element.
+    	  var input = document.getElementById('pac-input');
+    	  var searchBox = new google.maps.places.SearchBox(input);
+    	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    	  // Bias the SearchBox results towards current map's viewport.
+    	  map.addListener('bounds_changed', function() {
+    	    searchBox.setBounds(map.getBounds());
+    	  });
+
+    	  var markers = [];
+    	  // Listen for the event fired when the user selects a prediction and retrieve
+    	  // more details for that place.
+    	  searchBox.addListener('places_changed', function() {
+    	    var places = searchBox.getPlaces();
+
+    	    if (places.length == 0) {
+    	      return;
+    	    }
+
+    	    // Clear out the old markers.
+    	    markers.forEach(function(marker) {
+    	      marker.setMap(null);
+    	    });
+    	    markers = [];
+
+    	    // For each place, get the icon, name and location.
+    	    var bounds = new google.maps.LatLngBounds();
+
+    	    
+    	    places.forEach(function(place) {
+    	      var icon = {
+    	        url: place.icon,
+    	        size: new google.maps.Size(71, 71),
+    	        origin: new google.maps.Point(0, 0),
+    	        anchor: new google.maps.Point(17, 34),
+    	        scaledSize: new google.maps.Size(25, 25)
+    	      };
+
+    	      // Create a marker for each place.
+    	      markers.push(new google.maps.Marker({
+    	        map: map,
+    	        icon: icon,
+    	        title: place.name,
+    	        position: place.geometry.location
+    	      }));
+
+    	      if (place.geometry.viewport) {
+    	        // Only geocodes have viewport.
+    	        bounds.union(place.geometry.viewport);
+    	      } else {
+    	        bounds.extend(place.geometry.location);
+    	      }
+    	    });
+    	    map.fitBounds(bounds);
+    	  });
+    	} 
+      google.maps.event.addDomListener(window, 'load', initAutocomplete);
+    </script>
+<title>Electricity Breakdown Evaluation Management System</title>
+</head>
+<div id="line">
+<h2>Electricity Breakdown Evaluation Management System</h2>
+</div>
+<header align="middle" >
+<img align="middle" style="width:100%;height:130px;"  src="<c:url value="/resources/images/Header.png"/>" />
+</header>
+<div id="line1">
+</div>
+<ul class="nav">
+         <li class="nav li"><a href="<c:url value='/WelcomePage' />">Home</a></li>
+         <li class="nav li"><a href="<c:url value='/Customer' />">Customer</a></li>
+         <li class="nav li"><a href="<c:url value='/Complain' />">Complain</a></li>
+         <li class="nav li"><a href="<c:url value='/Customer' />">Customer</a></li>
+         <li class="nav li"><a href="<c:url value='/Complain' />">Complain</a></li>
+         <li class="nav li"><a href="<c:url value='/login' />">Login</a></li>
+</ul>
+<div id="line1">
+</div>
+
+<body align="middle">
+	<p>&nbsp;</p>
+	<h2 align="center" style="color: black">Job Assign</h2>
+
+	<table border="1" align="center" style="width:100%">
+        <thead>
+            <tr>
+                <th>AREA_CODE</th>
+                <th>USER_LOG</th>
+
+<th>JOB_NO</th>
+<th>PRIORITY_CODE</th>
+<th>ASSIGNED_BY</th>
+<th>ASSIGNED_DATE</th>
+<th>COMMENT_A</th>
+<th>TO_DO_CODE</th>
+<th>PRINT_STATUS</th>
+</tr>
+        </thead>
+        <tbody>
+           <c:forEach var="users" items="${users}" >
+                <tr>
+                
+                <td>${users.areaCode}</td>
+                <td>${users.userLog}</td>
+<td>${users.areaCode}</td>
+<td>${users.priorityCode}</td>
+<td>${users.areaCode}</td>
+<td>${users.areaCode}</td>
+<td>${users.commentA}</td>
+<td>${users.areaCode}</td>
+<td>${users.printStatus}</td>
+
+                    				                   
+                </tr>
+            </c:forEach> 
+        </tbody>
+    </table>
+
+
+<div id="footer" >
+Copyright © Gayani
+</div>
+</body>
+</html>
